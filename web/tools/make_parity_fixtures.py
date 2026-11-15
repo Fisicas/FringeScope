@@ -11,7 +11,7 @@ from pathlib import Path
 import numpy as np, scipy
 
 WEB = Path(__file__).resolve().parents[1]
-sys.path[:0] = [str(WEB.parent), str(WEB)]
+sys.path[:0] = [str(WEB.parent/'desktop'), str(WEB)]
 import web_kernel as K  # noqa: E402
 
 spec = json.loads((WEB/'src'/'controls.json').read_text(encoding='utf-8'))

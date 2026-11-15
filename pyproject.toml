@@ -18,7 +18,9 @@ test = ["pytest>=8"]
 fringescope = "startup:main"
 
 [tool.setuptools]
-py-modules = ["app", "ftir_sim", "plots", "diagnostics", "theory_view", "build_theory", "branding", "startup", "ui_help", "ui_theme", "display_format", "paper_style", "demo_model", "demo_plots", "build_demos"]
+package-dir = {"" = "desktop"}
+py-modules = ["app", "ftir_sim", "plots", "diagnostics", "theory_view", "build_theory", "branding", "startup", "ui_help", "ui_theme", "display_format", "paper_style", "demo_model", "demo_plots", "build_demos", "runtime_paths", "updater", "update_ui", "tour", "bundle_selftest", "hene_evidence"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["desktop"]

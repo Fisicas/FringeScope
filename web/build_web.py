@@ -1,6 +1,6 @@
 """Build the static FringeScope Web site into web/site (standard library only).
 
-Sources of truth stay in the repository root: THEORY.md, TUTORIAL.md,
+Sources of truth stay in desktop/: THEORY.md, TUTORIAL.md,
 MODEL_ASSUMPTIONS.md, REFERENCES.bib, ui_help.py, tour.py, ftir_sim.py and the
 synthetic model JSON. They are rendered or copied byte-for-byte; the
 build manifest records SHA-256 for every published file.
@@ -12,7 +12,8 @@ import ast, hashlib, html, json, re, shutil, struct, sys
 from pathlib import Path
 
 WEB = Path(__file__).resolve().parent
-ROOT = WEB.parent
+REPOSITORY = WEB.parent
+ROOT = REPOSITORY/'desktop'
 SITE = WEB/'site'
 SRC = WEB/'src'
 sys.path.insert(0, str(ROOT))
@@ -138,6 +139,7 @@ def equation(key, assets):
 
 def render_markdown(text, assets=None, figure_prefix=''):
     """Small renderer for this repository's Markdown subset. Returns (html, headings, figures)."""
+    text = BT.prepare_equation_blocks(text)
     out, para, bullets, ordered, headings, figures = [], [], [], [], [], {}
     pending_figure = None
     lines = text.splitlines()
@@ -261,7 +263,7 @@ def theory_page(build, assets):
              '<li><a href="index.html">Explore the live simulator</a>: the same engine with linked contour, spectrum, kinetics and DAS views.</li>'
              '<li><a href="demonstrations.html">Demonstrations</a>: the fixed lessons behind Figures 1, 2, 3 and 5.</li>'
              '<li><a href="tutorial.html">Guided tutorial</a>: ideal → mirror → globar → actinic leakage.</li>'
-             f'<li><a href="{REPO}">Source repository</a>: THEORY.md is the source of this page.</li></ul>')
+             f'<li><a href="{REPO}">Source repository</a>: desktop/THEORY.md is the source of this page.</li></ul>')
     infobox = f'''<table class="infobox" aria-label="Summary">
   <caption>FringeScope</caption>
   <tr><td colspan="2"><img src="img/fringescope_256.png" alt="FringeScope magnifying-lens logo" width="92" height="92"></td></tr>
@@ -371,7 +373,7 @@ def cite_page(build):
 <ul>
 <li><b>Plotly.js</b> 4.3.0 (cartesian bundle), MIT; served from this site. <a href="vendor/PLOTLY_LICENSE.txt">License text</a>.</li>
 <li><b>Pyodide</b> {PYODIDE} (MPL-2.0), with CPython, NumPy, SciPy and OpenBLAS under their own licenses, is loaded at run time from <a href="https://cdn.jsdelivr.net/pyodide/v{PYODIDE}/full/">jsDelivr</a>; this site does not redistribute it.</li>
-<li>The desktop application's notices are in <code>THIRD_PARTY_NOTICES.md</code> and <code>licenses/</code> in the repository.</li>
+<li>The desktop application's notices are in <code>desktop/THIRD_PARTY_NOTICES.md</code> and <code>desktop/licenses/</code> in the repository.</li>
 </ul>
 <h2 id="web-edition">Web edition: how it runs<a class="anchor" href="#web-edition" aria-label="Link to this section">#</a></h2>
 <p>Explore runs the repository's <code>ftir_sim.py</code> unchanged under Pyodide {PYODIDE} in a background Web Worker. The engine files are checked against SHA-256 values in the <a href="build_manifest.json">build manifest</a> before use. NumPy and SciPy versions in the browser can differ slightly from the desktop's pinned versions; the <a href="validate.html">numerical self-check</a> compares browser results with native desktop fixtures on your own device.</p>
@@ -446,7 +448,7 @@ def main():
     files = {p.relative_to(SITE).as_posix(): {'bytes': p.stat().st_size, 'sha256': sha(p.read_bytes())}
              for p in sorted(SITE.rglob('*')) if p.is_file()}
     manifest = dict(application='FringeScope Web (preview)', version=VERSION, build=build, pyodide=PYODIDE,
-                    note='Engine files under py/ are byte-identical copies of the repository root files listed in kernel_sources.',
+                    note='Engine files under py/ are byte-identical copies of the desktop/ source files listed in kernel_sources.',
                     kernel_sources={k: v for k, v in kernel.items()}, files=files)
     (SITE/'build_manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
     total = sum(v['bytes'] for v in files.values())

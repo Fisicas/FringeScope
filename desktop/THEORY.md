@@ -16,11 +16,15 @@ Use **Guided tour** in the header to follow ideal → mirror → globar → acti
 
 Artifact-free PSI ΔA is a signed transient difference signal. Explore and Demonstrations use the same generator. S₀ is a separate positive single-beam intensity envelope used for reconstruction and ratio formation; it is not sample absorbance or a calibrated detector/filter response.
 
-[[equation:chemical]]
+```math
+\Delta A(\tilde{\nu},t)=\left[H(\tilde{\nu})e^{-t/\tau_{\mathrm{H}}}+R(\tilde{\nu})e^{-t/\tau_{\mathrm{R}}}+C(\tilde{\nu})\right]u(t)\tag{1}
+```
 
 H and R are heating-like and recombination-like amplitude spectra. C is a causal unresolved residual; u(t) is zero before excitation and unity afterwards. The model uses ordinary exponentials with displayed lifetimes τH = 12.16 µs and τR = 449.14 µs, with βH = βR = 1. These are illustrative source parameters, not newly measured lifetimes or uncertainty estimates. Calculations and exports retain their precision.
 
-[[equation:bin]]
+```math
+\overline{\Delta A}(\tilde{\nu},t_i)=\frac{1}{\Delta t}\int_{t_i-\Delta t/2}^{t_i+\Delta t/2}\Delta A(\tilde{\nu},t)\,dt\tag{2}
+```
 
 Chemical bases are averaged over 6 µs recorder bins. Centers run from −153 to 3381 µs. The 100 µs spectrum is linearly interpolated between centers at 99 and 105 µs. Selection clicks snap to native channels/bins. Wavenumber remains descending, from about 2106.39 to 1053.20 cm⁻¹ across 513 channels. The acquisition origin and periodic 1024-point interferogram are model conventions, not a reconstruction of an OPUS experiment.
 
@@ -32,21 +36,31 @@ C is defined as `C(ν) = 0.08 R(ν) + 0.04 H(ν)`. Those fractions are assumed, 
 
 At 840 Hz the period is 1.19 ms, giving about 2.84 cycles in 3.38 ms. Temporal phase shifts maxima without changing the period. An even response to displacement can produce 2f from a pure sine drive; common bias can restore a strong f term. Composite drive harmonics and nonlinear readout harmonics are different mechanisms.
 
-[[equation:period]]
+```math
+T=\frac{1}{f},\qquad N_{\mathrm{cycles}}=f\,T_{\mathrm{window}},\qquad \Delta t_{\phi}=\frac{\Delta\phi}{360^{\circ}f}\tag{3}
+```
 
-[[equation:small]]
+```math
+\Delta A\simeq-\frac{\Delta S}{\ln(10)\,S_0}\qquad (|\Delta S|\ll S_0)\tag{4}
+```
 
 A broad additive intensity error may be amplified in absorbance where S₀ is small. That does not uniquely identify its cause. Uniform coherent mirror displacement in the ideal biased real-readout model instead has an approximately wavenumber-squared dependence at small phase. Adding temporal harmonics alone does not guarantee an inverse-transmission spectral shape. A short oscillatory record cannot uniquely identify mechanical modes or a mains source; 14 × 60 = 840 Hz is only an arithmetic coincidence.
 
 ## Mirror displacement and detector response
 
-[[equation:ifg]]
+```math
+I(x,t)=\int S(\tilde{\nu},t)\cos(2\pi\tilde{\nu}x)\,d\tilde{\nu}\tag{5}
+```
 
-[[equation:shift]]
+```math
+\delta x=2d,\qquad I(x+\delta x,t)\simeq\sum_{m=0}^{4}\frac{(\delta x)^m}{m!}\frac{\partial^m I(x,t)}{\partial x^m}\tag{6}
+```
 
 OPD x is in cm; mirror displacement d in nm changes OPD by 2d × 10⁻⁷ cm. The production engine uses a fourth-order expansion at the physical optical wavenumber with the odd-zone alias sign retained. Common bias affects both records; return mismatch and per-step jitter are differential errors. Constant ZPD registration error alone is not a temporal 840 Hz source. A step-scan mirror normally holds a position during a flash train, rather than returning to ZPD after every flash.
 
-[[equation:demo_local]]
+```math
+\delta I(x,t)\simeq 2d(t)\,\frac{\partial I(x+2b)}{\partial x}\tag{7}
+```
 
 The reference interferogram's local slope controls the first-order detector change. At an unbiased symmetric ZPD that derivative vanishes, so higher orders matter. The lesson below evaluates an exact spatial cosine sum and displays the AC detector component, not unmodulated detector DC. Baseline time zero is an arbitrary acquisition origin, not a flash. All traces share one ideal IR IFG peak; stated vertical offsets are graphical only.
 
@@ -56,7 +70,9 @@ The reference interferogram's local slope controls the first-order detector chan
 
 ## Harmonics and coaddition
 
-[[equation:demo_real]]
+```math
+\Delta A_b(t)=-\log_{10}\!\left[\frac{\cos\{\kappa[b+a\sin\theta(t)]\}}{\cos(\kappa b)}\right]\tag{8}
+```
 
 Here a and b are mirror amplitude and common bias in nm, θ is temporal drive phase and κ = 4πν × 10⁻⁷ cm nm⁻¹ with ν in cm⁻¹. The exact uniform fixed-real identity explains leading 2f at zero bias and a strong fundamental with bias. The stationary reference shares that bias. This is not the instrument's phase-correction algorithm.
 
@@ -64,9 +80,13 @@ Here a and b are mirror amplitude and common bias in nm, θ is temporal drive ph
 
 **Figure 2.** Pure sine motion with zero/common bias, harmonic amplitudes over one exact cycle, and superposition on the shared PSI input. DC is excluded from harmonic bars; amplitudes below the indicated floor remain in numerical exports. The chemical panels retain bin-averaged chemical bases and flash-gated, bin-center motion. Their timing differs explicitly from the ungated baseline lesson.
 
-[[equation:coadd]]
+```math
+\Delta A_N=-\log_{10}\!\left[\frac{\frac{1}{N}\sum_{j=0}^{N-1}S_j}{S_{\mathrm{ref}}}\right]\tag{9}
+```
 
-[[equation:phase_factor]]
+```math
+C_m=\frac{1}{N}\sum_{j=0}^{N-1}e^{im\phi_j},\qquad C_m^{(0,\pi)}=\frac{1+(-1)^m}{2}\tag{10}
+```
 
 Detector/intensity records are averaged before the logarithm. An ideal 0°/180° pair cancels odd intensity harmonics while retaining even ones. At 840 Hz and 10 Hz repetition, an exact integer 84 cycles between shots preserves coherence; 10.01 Hz gives phase walk. Cm describes intensity-harmonic transfer, not universal absorbance attenuation. Coherent OPD phase is imposed in this lesson to isolate shot timing; no free-running step-phase schedule or 1/√N suppression is assumed.
 
@@ -76,9 +96,13 @@ Detector/intensity records are averaged before the logarithm. An ideal 0°/180°
 
 ## Optical folding and pulsed pickup
 
-[[equation:sampling]]
+```math
+F_s=\frac{1}{\Delta x}=2B,\qquad \tilde{\nu}\in[B,2B]\tag{11}
+```
 
-[[equation:alias]]
+```math
+q(\tilde{\nu})=\left|\left[(\tilde{\nu}+B)\;\mathrm{mod}\;2B\right]-B\right|,\qquad \tilde{\nu}_{\mathrm{display}}=2B-q\tag{12}
+```
 
 Spatial sampling, not nanosecond pulse width, sets the optical alias. For this selected odd-zone grid B ≈ 1053.20 cm⁻¹ and OPD step ≈ 4.75 µm, nominal 532 nm OPD-modulated light maps to about 1945.86 cm⁻¹. Directly sampled fringe checks support the identity; these values are not measured metrology or detector-response calibration. A uniform direct bypass has no optical carrier; an assumed step-dependent bypass has the spectrum of its coupling pattern.
 
@@ -86,11 +110,17 @@ The optical pulse model is a nominal 6 ns Gaussian plus an assumed 20 ns delay t
 
 ## Continuous leakage and electrical pickup
 
-[[equation:leak]]
+```math
+\Delta A_{\mathrm{obs}}=-\log_{10}\!\left[\frac{S_0\,10^{-\Delta A_{\mathrm{true}}}+L}{S_0+L}\right]\tag{13}
+```
 
-[[equation:steady_zero]]
+```math
+\Delta A_{\mathrm{true}}=0\quad\Longrightarrow\quad\Delta A_{\mathrm{obs}}=-\log_{10}\!\left(\frac{S_0+L_{\mathrm{CW}}}{S_0+L_{\mathrm{CW}}}\right)=0\tag{14}
+```
 
-[[equation:dilution]]
+```math
+\Delta A_{\mathrm{obs}}\simeq\frac{S_0}{S_0+L_{\mathrm{CW}}}\,\Delta A_{\mathrm{true}}\tag{15}
+```
 
 Stable positive leakage L enters reference and signal, diluting a small real difference while canceling for an unchanged sample. Globar leakage uses Planck radiance per wavenumber, an assumed Gaussian transmission leak and flat responsivity. Changing leakage, saturation and calibrated shot noise are not inferred from this steady model. HeNe is not a primary control; its internal comparison demonstrates stationary cancellation and a conditional mirror-coupled exception, not harmlessness in the real instrument.
 

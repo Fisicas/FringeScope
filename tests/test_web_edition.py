@@ -8,6 +8,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 WEB = ROOT/'web'
+DESKTOP = ROOT/'desktop'
 sys.path.insert(0, str(WEB))
 import web_kernel  # noqa: E402
 
@@ -181,8 +182,8 @@ def test_static_site_build_is_complete_and_engine_files_are_identical(tmp_path, 
     site = tmp_path/'site'
     manifest = json.loads((site/'build_manifest.json').read_text(encoding='utf-8'))
     for name in ['ftir_sim.py', 'synthetic_model.json', 'release_config.json', 'THEORY.md', 'REFERENCES.bib', 'MODEL_ASSUMPTIONS.md']:
-        assert (site/'py'/name).read_bytes() == (ROOT/name).read_bytes(), name
-        assert manifest['kernel_sources'][name] == hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
+        assert (site/'py'/name).read_bytes() == (DESKTOP/name).read_bytes(), name
+        assert manifest['kernel_sources'][name] == hashlib.sha256((DESKTOP/name).read_bytes()).hexdigest()
     assert (site/'py'/'web_kernel.py').read_bytes() == (WEB/'web_kernel.py').read_bytes()
     assert json.loads((site/'py'/'release_config.json').read_text(encoding='utf-8'))['public_mode'] is True
     pages = ['index.html', 'demonstrations.html', 'theory.html', 'tutorial.html', 'cite.html', 'validate.html', '404.html']

@@ -1,6 +1,6 @@
 # FringeScope Web: GitHub Pages edition
 
-Status (November 15, 2026): **implemented locally as a preview and validated on the development workstation (see [docs/WEB_VALIDATION.md](docs/WEB_VALIDATION.md)); not deployed.** Nothing has been pushed, Pages is not enabled and no hosted preview exists. The intended project URL `https://Fisicas.github.io/FringeScope/` is not claimed to exist. Zenodo and DOI work stay deferred. The Windows application, its scientific engine and its prepared 0.11.0 binaries are unchanged by this work.
+Status (November 15, 2026): **implemented locally as a preview and validated on the development workstation (see [docs/WEB_VALIDATION.md](WEB_VALIDATION.md)); not deployed.** Nothing has been pushed, Pages is not enabled and no hosted preview exists. The intended project URL `https://Fisicas.github.io/FringeScope/` is not claimed to exist. Zenodo and DOI work stay deferred. The Windows application, its scientific engine and its prepared 0.11.0 binaries are unchanged by this work.
 
 ## Decision
 
@@ -17,7 +17,7 @@ Yes, a browser edition and the standalone application can coexist in one reposit
 | Page | Contents | Needs Python runtime |
 | --- | --- | --- |
 | Explore (`index.html`) | Source toggles, linked contour / spectrum / kinetics / DAS, other views, controls drawer, guided tour, export ZIP | Yes |
-| Demonstrations | The four fixed lessons rendered by `build_demos.py`, light and dark, labeled **precomputed** | No |
+| Demonstrations | The four fixed lessons rendered by `desktop/build_demos.py`, light and dark, labeled **precomputed** | No |
 | Theory | Article generated from `THEORY.md` | No |
 | Tutorial | How the tour works, the four steps with a live link to each (`index.html#tour-N`), and the desktop notes from `TUTORIAL.md` | No |
 | Download / Cite | Desktop downloads (after publication), citation, license, web-runtime notices and privacy | No |

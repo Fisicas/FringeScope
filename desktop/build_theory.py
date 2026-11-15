@@ -105,6 +105,25 @@ def headings(root):
     return [(line[3:],re.sub('[^a-z0-9]+','-',line[3:].lower()).strip('-')) for line in source.splitlines() if line.startswith('## ')]
 
 
+
+def prepare_equation_blocks(source):
+    """Render GitHub-native math with the same numbered assets offline.
+
+    Match complete canonical expressions, including equation numbers, so a
+    manuscript edit cannot silently leave a different equation in the app.
+    """
+    blocks = {
+        latex.removeprefix('$').removesuffix('$') + rf'\tag{{{NUMBERING.index(key)+1}}}': key
+        for key, (latex, _) in EQUATIONS.items()
+    }
+    def replace(match):
+        expression = match[1].strip()
+        if expression not in blocks:
+            raise ValueError('Theory math block differs from the canonical numbered equation')
+        return '[[equation:' + blocks[expression] + ']]'
+    return re.sub(r'```math[ \t]*\r?\n(.*?)\r?\n```', replace, source, flags=re.S)
+
+
 def build_html(root,font_px=20,content_width=1400,embedded=False,theme='dark'):
     root=Path(root);assets=ensure_assets(root,theme)
     dark=theme=='dark';fg='#dde3ea' if dark else '#20242a';bg='#1b2128' if dark else '#ffffff'
@@ -115,7 +134,7 @@ def build_html(root,font_px=20,content_width=1400,embedded=False,theme='dark'):
         shown=dark_relative if dark and (root/dark_relative).exists() else relative
         return (f'<img src="{html.escape(shown,quote=True)}" width="{round(width)}" height="{round(height)}" '
             f'data-light-src="{html.escape(relative,quote=True)}" data-dark-src="{html.escape(dark_relative,quote=True)}" alt="{html.escape(alt,quote=True)}">')
-    source=(root/'THEORY.md').read_text(encoding='utf-8')
+    source=prepare_equation_blocks((root/'THEORY.md').read_text(encoding='utf-8'))
     pieces=[];paragraph=[];bullets=[];table=[]
     def equation(key):
         d=assets[key];factor=font_px/20

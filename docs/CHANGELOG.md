@@ -23,3 +23,14 @@ The prepared source removes unused experimental-replay/static plotting functions
 - Desktop plots scroll at short window sizes; the initial window respects the available work area. Startup update timers are owned by the window and stop when it closes.
 - Browser-adapter exports use unique temporary directories with cleanup; native tests select their own temporary root. Phone reference URLs wrap within the page.
 - Added numerical/export/tour/sizing regressions and a reproducible optional Playwright browser check. Scientific engine/model files are unchanged; publication and update checks remain on hold.
+
+### Repository organization (November 15, 2026)
+
+- Grouped application modules and shared runtime resources in `desktop/`, guides and synthetic examples in `docs/`, and dependency lists in `requirements/`. Added navigation pages and direct README links to the browser app and theory.
+- Updated the static-site builder, fixture generator, Python source configuration, test imports, Windows freezer and installer icon path. Frozen resource relationships, installer identity and persistent user-data paths are retained.
+- Scientific engine and model inputs are byte-identical to the reviewed baseline; this update changes source organization and build paths.
+
+### GitHub theory formatting
+
+- Replaced private equation placeholders in `desktop/THEORY.md` with native GitHub math blocks and explicit equation numbers. Offline and browser readers validate those expressions against the canonical equation definitions and retain their existing numbered figure layout.
+- Added regressions for complete public equations and rejection of formula/number mismatches. The numerical engine and scientific expressions are unchanged.
