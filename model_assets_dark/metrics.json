@@ -1,0 +1,131 @@
+{
+  "status": "passed",
+  "source_version": "0.9.0",
+  "source_hashes": {
+    "ftir_sim.py": "3a3b4f51745626ae0994911f86fc57c5b8796e9f62b9ebf635fa32f59ff1e6c8",
+    "synthetic_model.json": "a2d45fd6ea6003220de805bc1f70866c5a17511ad1dae0278a027f2a88f6e30b"
+  },
+  "aliases": [
+    {
+      "physical_cm1": 700.0,
+      "display_cm1": 1406.3914569333333,
+      "max_fringe_error": 3.9679370900103095e-13
+    },
+    {
+      "physical_cm1": 1650.0,
+      "display_cm1": 1650.0000000000002,
+      "max_fringe_error": 0.0
+    },
+    {
+      "physical_cm1": 3300.0,
+      "display_cm1": 1193.608543066667,
+      "max_fringe_error": 7.518846656395795e-13
+    },
+    {
+      "physical_cm1": 18796.992481203008,
+      "display_cm1": 1945.8608257363423,
+      "max_fringe_error": 5.39740474536643e-12
+    },
+    {
+      "physical_cm1": 15802.781289506955,
+      "display_cm1": 1058.0410909736227,
+      "max_fringe_error": 5.947520254068195e-12
+    }
+  ],
+  "displacement_convergence": [
+    {
+      "max_phase_rad": 0.01,
+      "max_ifg_error_over_peak": 1.0759082420713023e-13,
+      "max_spectral_error_OD": 3.4947227387877064e-13,
+      "invalid_channels": 0
+    },
+    {
+      "max_phase_rad": 0.05,
+      "max_ifg_error_over_peak": 3.363328959521265e-10,
+      "max_spectral_error_OD": 9.275625773331494e-10,
+      "invalid_channels": 0
+    },
+    {
+      "max_phase_rad": 0.1,
+      "max_ifg_error_over_peak": 1.0742695681800676e-08,
+      "max_spectral_error_OD": 2.962213151466988e-08,
+      "invalid_channels": 0
+    },
+    {
+      "max_phase_rad": 0.25,
+      "max_ifg_error_over_peak": 1.0425922737006138e-06,
+      "max_spectral_error_OD": 2.857330813243783e-06,
+      "invalid_channels": 0
+    },
+    {
+      "max_phase_rad": 0.5,
+      "max_ifg_error_over_peak": 3.294817979180058e-05,
+      "max_spectral_error_OD": 8.731641876078282e-05,
+      "invalid_channels": 0
+    },
+    {
+      "max_phase_rad": 1.0,
+      "max_ifg_error_over_peak": 0.0010200600773369894,
+      "max_spectral_error_OD": 0.0022823619009249103,
+      "invalid_channels": 0
+    }
+  ],
+  "pulse_quadrature": [
+    {
+      "response_us": 0.15,
+      "tail_ns": 20,
+      "delay_us": 0,
+      "max_bin_mean_error_per_us": 1.1102230246251565e-16
+    },
+    {
+      "response_us": 0.02,
+      "tail_ns": 20,
+      "delay_us": 0,
+      "max_bin_mean_error_per_us": 5.543898673465719e-13
+    },
+    {
+      "response_us": 0,
+      "tail_ns": 0,
+      "delay_us": 0,
+      "max_bin_mean_error_per_us": 9.71445146547012e-17
+    },
+    {
+      "response_us": 0.15,
+      "tail_ns": 20,
+      "delay_us": 0.5,
+      "max_bin_mean_error_per_us": 5.551115123125783e-17
+    },
+    {
+      "response_us": 0.15,
+      "tail_ns": 20,
+      "delay_us": 2.999,
+      "max_bin_mean_error_per_us": 2.7755575615628914e-16
+    }
+  ],
+  "bin_center_approximation": [
+    {
+      "frequency_hz": 840,
+      "bin_us": 6.0,
+      "sine_amplitude_loss_fraction": 4.178343342586821e-05
+    },
+    {
+      "frequency_hz": 10000,
+      "bin_us": 6.0,
+      "sine_amplitude_loss_fraction": 0.005911251354148717
+    },
+    {
+      "frequency_hz": 50000,
+      "bin_us": 6.0,
+      "sine_amplitude_loss_fraction": 0.14160630866586021
+    }
+  ],
+  "continuous_leakage": {
+    "exact_ratio_error_OD": 6.750479895119982e-16,
+    "stationary_max_OD": 0.0,
+    "small_signal_linear_error_OD": 1.4207326372990436e-15
+  },
+  "conventions": "Physical cm^-1; cm OPD; mirror displacement = OPD/2. Fixed-real reconstruction. Descending spectral output. No smoothing or normalization.",
+  "limitations": "Selected deterministic cases, not instrument calibration or a uniform error bound. Pulse PDF quadrature independently checks CDF bins, not the physical detector model.",
+  "python": "3.12.10",
+  "numpy": "2.5.3"
+}

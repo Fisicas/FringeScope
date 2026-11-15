@@ -1,0 +1,152 @@
+{
+  "chemical": {
+    "file": "equation_01.png",
+    "width": 460.0,
+    "height": 28.0,
+    "number": 1,
+    "alt": "Delta A(nu,t) = [H(nu) exp(-t/tau_H) + R(nu) exp(-t/tau_R) + C(nu)] u(t)",
+    "latex": "$\\Delta A(\\tilde{\\nu},t)=\\left[H(\\tilde{\\nu})e^{-t/\\tau_{\\mathrm{H}}}+R(\\tilde{\\nu})e^{-t/\\tau_{\\mathrm{R}}}+C(\\tilde{\\nu})\\right]u(t)$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "bin": {
+    "file": "equation_02.png",
+    "width": 318.4,
+    "height": 45.2,
+    "number": 2,
+    "alt": "Recorded bin mean equals the time integral over the bin divided by Delta t.",
+    "latex": "$\\overline{\\Delta A}(\\tilde{\\nu},t_i)=\\frac{1}{\\Delta t}\\int_{t_i-\\Delta t/2}^{t_i+\\Delta t/2}\\Delta A(\\tilde{\\nu},t)\\,dt$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "ifg": {
+    "file": "equation_03.png",
+    "width": 282.4,
+    "height": 30.4,
+    "number": 5,
+    "alt": "Interferogram I(x,t) is the cosine transform of single-beam spectrum S(nu,t).",
+    "latex": "$I(x,t)=\\int S(\\tilde{\\nu},t)\\cos(2\\pi\\tilde{\\nu}x)\\,d\\tilde{\\nu}$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "shift": {
+    "file": "equation_04.png",
+    "width": 413.2,
+    "height": 61.2,
+    "number": 6,
+    "alt": "OPD displacement is twice mirror displacement, in matching length units. Shift is expanded through fourth order.",
+    "latex": "$\\delta x=2d,\\qquad I(x+\\delta x,t)\\simeq\\sum_{m=0}^{4}\\frac{(\\delta x)^m}{m!}\\frac{\\partial^m I(x,t)}{\\partial x^m}$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "sampling": {
+    "file": "equation_05.png",
+    "width": 304.0,
+    "height": 30.4,
+    "number": 11,
+    "alt": "Spatial sampling frequency Fs is 1/Delta x = 2B; desired band is B to 2B.",
+    "latex": "$F_s=\\frac{1}{\\Delta x}=2B,\\qquad \\tilde{\\nu}\\in[B,2B]$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "alias": {
+    "file": "equation_06.png",
+    "width": 524.0,
+    "height": 25.2,
+    "number": 12,
+    "alt": "q(nu) = abs(((nu + B) modulo 2B) - B); displayed wavenumber is 2B - q.",
+    "latex": "$q(\\tilde{\\nu})=\\left|\\left[(\\tilde{\\nu}+B)\\;\\mathrm{mod}\\;2B\\right]-B\\right|,\\qquad \\tilde{\\nu}_{\\mathrm{display}}=2B-q$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "leak": {
+    "file": "equation_07.png",
+    "width": 284.0,
+    "height": 40.0,
+    "number": 13,
+    "alt": "Observed Delta A = -log10[(S0 times 10 to minus true Delta A + leakage L)/(S0 + L)].",
+    "latex": "$\\Delta A_{\\mathrm{obs}}=-\\log_{10}\\!\\left[\\frac{S_0\\,10^{-\\Delta A_{\\mathrm{true}}}+L}{S_0+L}\\right]$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "small": {
+    "file": "equation_08.png",
+    "width": 320.0,
+    "height": 33.2,
+    "number": 4,
+    "alt": "For a small signal, Delta A approximately equals -Delta S divided by ln(10) S0.",
+    "latex": "$\\Delta A\\simeq-\\frac{\\Delta S}{\\ln(10)\\,S_0}\\qquad (|\\Delta S|\\ll S_0)$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "period": {
+    "file": "equation_09.png",
+    "width": 457.2,
+    "height": 37.2,
+    "number": 3,
+    "alt": "Period is 1/f; cycle count is f times the time window; phase timing shift is Delta phi/(360 degrees times f).",
+    "latex": "$T=\\frac{1}{f},\\qquad N_{\\mathrm{cycles}}=f\\,T_{\\mathrm{window}},\\qquad \\Delta t_{\\phi}=\\frac{\\Delta\\phi}{360^{\\circ}f}$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "steady_zero": {
+    "file": "equation_10.png",
+    "width": 490.4,
+    "height": 36.0,
+    "number": 14,
+    "alt": "For zero true change, the same steady leakage in both records gives zero observed difference absorbance.",
+    "latex": "$\\Delta A_{\\mathrm{true}}=0\\quad\\Longrightarrow\\quad\\Delta A_{\\mathrm{obs}}=-\\log_{10}\\!\\left(\\frac{S_0+L_{\\mathrm{CW}}}{S_0+L_{\\mathrm{CW}}}\\right)=0$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "dilution": {
+    "file": "equation_11.png",
+    "width": 224.0,
+    "height": 36.0,
+    "number": 15,
+    "alt": "For a small difference signal, the observed amplitude is scaled by S0 divided by S0 plus steady leakage.",
+    "latex": "$\\Delta A_{\\mathrm{obs}}\\simeq\\frac{S_0}{S_0+L_{\\mathrm{CW}}}\\,\\Delta A_{\\mathrm{true}}$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "demo_local": {
+    "file": "equation_12.png",
+    "width": 222.4,
+    "height": 33.2,
+    "number": 7,
+    "alt": "A small mirror displacement d changes the AC detector signal by twice d times the local OPD derivative about common mirror bias b.",
+    "latex": "$\\delta I(x,t)\\simeq 2d(t)\\,\\frac{\\partial I(x+2b)}{\\partial x}$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "demo_real": {
+    "file": "equation_13.png",
+    "width": 334.4,
+    "height": 37.2,
+    "number": 8,
+    "alt": "For fixed real readout and stationary biased reference, difference absorbance is minus log10 of cos(kappa times bias plus drive) divided by cos(kappa bias).",
+    "latex": "$\\Delta A_b(t)=-\\log_{10}\\!\\left[\\frac{\\cos\\{\\kappa[b+a\\sin\\theta(t)]\\}}{\\cos(\\kappa b)}\\right]$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "coadd": {
+    "file": "equation_14.png",
+    "width": 225.2,
+    "height": 64.0,
+    "number": 9,
+    "alt": "Average the N detector or intensity records first, then form difference absorbance against the declared reference.",
+    "latex": "$\\Delta A_N=-\\log_{10}\\!\\left[\\frac{\\frac{1}{N}\\sum_{j=0}^{N-1}S_j}{S_{\\mathrm{ref}}}\\right]$",
+    "renderer_version": 4,
+    "theme": "dark"
+  },
+  "phase_factor": {
+    "file": "equation_15.png",
+    "width": 382.4,
+    "height": 65.2,
+    "number": 10,
+    "alt": "Intensity harmonic m has phase-coherence factor C_m; a 0 and pi phase pair cancels odd orders and retains even orders.",
+    "latex": "$C_m=\\frac{1}{N}\\sum_{j=0}^{N-1}e^{im\\phi_j},\\qquad C_m^{(0,\\pi)}=\\frac{1+(-1)^m}{2}$",
+    "renderer_version": 4,
+    "theme": "dark"
+  }
+}

@@ -1,0 +1,39 @@
+# Manual deployment of the FringeScope Web static site to GitHub Pages.
+# Nothing runs on push. Enable Pages (Source: GitHub Actions) and dispatch this
+# workflow only after the release has been approved for publication.
+name: Deploy web edition (manual)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # Standard library only; engine files are copied byte-for-byte and hashed.
+      - run: python -X utf8 web/build_web.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

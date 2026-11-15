@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fringescope"
+version = "0.11.0"
+description = "Time-resolved step-scan FTIR artifact simulator"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Michael Raymond Nelson"}]
+dependencies = ["numpy>=2.0", "scipy>=1.13", "matplotlib>=3.9", "PySide6-Essentials>=6.8", "packaging>=24"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+fringescope = "startup:main"
+
+[tool.setuptools]
+py-modules = ["app", "ftir_sim", "plots", "diagnostics", "theory_view", "build_theory", "branding", "startup", "ui_help", "ui_theme", "display_format", "paper_style", "demo_model", "demo_plots", "build_demos"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

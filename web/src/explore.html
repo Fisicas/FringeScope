@@ -1,0 +1,72 @@
+<main class="explore" id="main">
+  <h1 class="visually-hidden">FringeScope Explore: live step-scan FTIR artifact simulation</h1>
+  <div class="toolbar">
+    <span class="badge">Simulated data</span>
+    <span class="engine" id="engine" data-state="loading" role="status" aria-live="polite"><span class="dot"></span><span id="engine-text">Loading…</span></span>
+    <span class="spacer"></span>
+    <button type="button" class="btn" id="controls-button" aria-controls="controls" aria-expanded="false">Controls</button>
+    <button type="button" class="btn" id="tour-button">Guided tour</button>
+    <button type="button" class="btn" id="reset-ideal">Reset to ideal</button>
+    <button type="button" class="btn primary" id="export-button">Export run</button>
+  </div>
+  <p class="hint" id="hint"></p>
+  <div class="sources" id="sources" role="group" aria-label="Artifact sources"></div>
+  <div class="workspace">
+    <section class="coach" id="coach" hidden aria-labelledby="coach-title">
+      <div class="coach-head">
+        <span class="coach-step" id="coach-step"></span>
+        <span class="spacer"></span>
+        <button type="button" class="btn small coach-min" id="coach-min" aria-expanded="true" aria-controls="coach-body">Hide</button>
+        <button type="button" class="btn small" id="coach-exit" title="Leave the tour and restore your previous controls and selections">End tour</button>
+      </div>
+      <h2 class="coach-title" id="coach-title" tabindex="-1"></h2>
+      <div class="coach-body" id="coach-body">
+        <p class="coach-changed"><strong>What changed.</strong> <span id="coach-changed"></span></p>
+        <p class="coach-look-h">Where to look</p>
+        <p class="note coach-note">The same numbers mark the plots and source buttons. Select an item to show and outline it.</p>
+        <ol class="coach-look" id="coach-look"></ol>
+      </div>
+      <div class="coach-nav">
+        <button type="button" class="btn" id="coach-back">Back</button>
+        <button type="button" class="btn primary coach-next" id="coach-next">Next →</button>
+      </div>
+    </section>
+    <aside class="controls" id="controls" aria-label="Simulation controls">
+      <div class="controls-head"><strong>Controls</strong><button type="button" class="btn" id="controls-close">Done</button></div>
+      <div id="control-sections"></div>
+      <p class="note">Values display at most two decimals; calculations and exports keep full precision. Parameters of a source are kept while it is off.</p>
+    </aside>
+    <div class="scrim" id="scrim" hidden></div>
+    <section class="views" aria-label="Linked plots">
+      <div class="status" id="status" aria-live="polite">Waiting for the engine…</div>
+      <div class="selection">
+        <label for="sel-wn">Kinetics (cm⁻¹)</label>
+        <input id="sel-wn" type="number" step="1" min="1053.1957284666667" max="2106.3914569333334" inputmode="decimal">
+        <label for="sel-time">Spectrum (µs)</label>
+        <input id="sel-time" type="number" step="6" min="-153" max="3381" inputmode="decimal">
+        <div class="time-slider"><label class="slider-label" for="time-slider">Time bin (native 6 µs centers)</label><input id="time-slider" type="range" min="0" max="589" step="1" value="42"></div>
+        <div class="wn-slider-row"><label class="slider-label" for="wn-slider">Wavenumber channel (high → low, as plotted)</label><input id="wn-slider" type="range" min="0" max="512" step="1"></div>
+        <div class="sel-actions">
+          <div class="mode-switch" role="group" aria-label="Plot interaction">
+            <button type="button" data-mode="select" aria-pressed="true">Select</button>
+            <button type="button" data-mode="zoom" aria-pressed="false">Zoom / pan</button>
+          </div>
+          <button type="button" class="btn" id="reset-view" title="Restore the full spectral/time view without changing sources, parameters or selections.">Reset view</button>
+        </div>
+      </div>
+      <p class="selection-label" id="sel-label"></p>
+      <p class="note" id="mode-hint"></p>
+      <div class="view-tabs" id="view-tabs" role="tablist" aria-label="Views"></div>
+      <div class="diag-row" id="diag-row" hidden>
+        <label for="diagnostic">Diagnostic view</label>
+        <select id="diagnostic"><option value="interferograms">Interferograms</option><option value="waveform">Mirror waveform</option><option value="optics">Sampling and pulse guide</option></select>
+      </div>
+      <div class="plots-wrap">
+        <div id="loading" class="loading-panel" hidden></div>
+        <div id="plots"></div>
+      </div>
+      <p class="warnings" id="warnings" aria-live="polite"></p>
+      <p class="note">Displays the synthetic PSI-inspired signal only; no experimental arrays are used. <a href="theory.html">Theory and evidence</a> explains every effect and its limits.</p>
+    </section>
+  </div>
+</main>

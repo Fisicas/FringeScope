@@ -1,0 +1,16 @@
+<main id="main" class="page">
+  <article class="prose" style="max-width:1100px">
+    <h1>Numerical self-check</h1>
+    <p class="tagline">Runs declared scenarios in this browser and compares them with results computed natively in the desktop's pinned Python environment.</p>
+    <p>Each scenario uses the same control-to-settings path as Explore and the desktop application. The page compares sampled spectra and kinetics (full precision), the projected kinetic reconstruction, signed DAS, fitted lifetimes and the positions of every masked (NaN) value. Nothing is uploaded; results stay on this device.</p>
+    <p><strong>Pass criteria:</strong> identical NaN mask; sampled ΔA and projected reconstructions within 1 × 10⁻¹⁰ OD (10⁻⁴ µOD); signed DAS within 1 × 10⁻¹⁰ OD for fixed-basis projections; lifetimes within a relative 10⁻⁶. The two <em>refit</em> scenarios run an iterative optimizer whose stopping point can differ at the level of floating-point round-off between platforms; their DAS tolerance is 1 × 10⁻⁸ OD (0.01 µOD), still far below the two-decimal µOD display.</p>
+    <p><button type="button" class="btn primary" id="run">Run the self-check</button> <span id="progress" class="note"></span></p>
+    <div id="summary"></div>
+    <table class="data" id="results" hidden>
+      <thead><tr><th>Scenario</th><th>Mask</th><th>Max |Δ| ΔA (OD)</th><th>Max |Δ| DAS (OD)</th><th>Lifetime rel. Δ</th><th>Browser time (s)</th><th>Result</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <h2 id="environment">Environment</h2>
+    <pre class="cite" id="env">Not run yet.</pre>
+  </article>
+</main>

@@ -1,0 +1,352 @@
+{
+  "model": "two causal plain exponentials plus a declared non-decaying mixture",
+  "revision": "v09 literature-guided heating; shared PSI generator",
+  "taus_us": [
+    12.159431012654633,
+    449.14283667622936
+  ],
+  "betas": [
+    1.0,
+    1.0
+  ],
+  "bands": {
+    "heating": [
+      {
+        "center_cm1": 1699,
+        "amplitude_uOD": -60,
+        "sigma_cm1": 5
+      },
+      {
+        "center_cm1": 1662,
+        "amplitude_uOD": 310,
+        "sigma_cm1": 8
+      },
+      {
+        "center_cm1": 1623,
+        "amplitude_uOD": -240,
+        "sigma_cm1": 16
+      },
+      {
+        "center_cm1": 1561,
+        "amplitude_uOD": -900,
+        "sigma_cm1": 8
+      },
+      {
+        "center_cm1": 1545,
+        "amplitude_uOD": 430,
+        "sigma_cm1": 5
+      },
+      {
+        "center_cm1": 1473,
+        "amplitude_uOD": -220,
+        "sigma_cm1": 11
+      }
+    ],
+    "recombination": [
+      {
+        "amplitude_uOD": -544.4722949457183,
+        "center_cm1": 1697.314089644673,
+        "sigma_cm1": 5.3722579423322205
+      },
+      {
+        "amplitude_uOD": 404.59470965805696,
+        "center_cm1": 1658.9032467879138,
+        "sigma_cm1": 7.871841734243865
+      },
+      {
+        "amplitude_uOD": -332.3730647578207,
+        "center_cm1": 1635.7444726177812,
+        "sigma_cm1": 4.0852520580616565
+      },
+      {
+        "amplitude_uOD": -600.8735876489247,
+        "center_cm1": 1666.138334504579,
+        "sigma_cm1": 4.623017706391235
+      },
+      {
+        "amplitude_uOD": 271.4433096265782,
+        "center_cm1": 1673.6399672369648,
+        "sigma_cm1": 3.615995122976304
+      },
+      {
+        "amplitude_uOD": 195.24664845276644,
+        "center_cm1": 1569.0428764853366,
+        "sigma_cm1": 3.078091864739674
+      },
+      {
+        "amplitude_uOD": 166.51409399774477,
+        "center_cm1": 1717.6023304157861,
+        "sigma_cm1": 3.984399287625242
+      },
+      {
+        "amplitude_uOD": -150.0120272547015,
+        "center_cm1": 1545.1051636174489,
+        "sigma_cm1": 4.651239614043051
+      },
+      {
+        "amplitude_uOD": -277.03222272774576,
+        "center_cm1": 1749.9213878114595,
+        "sigma_cm1": 3.3630386849402147
+      },
+      {
+        "amplitude_uOD": 80.05691755734719,
+        "center_cm1": 1496.3986305992184,
+        "sigma_cm1": 17.999999999999996
+      },
+      {
+        "amplitude_uOD": 270.4767127494882,
+        "center_cm1": 1753.4685898033972,
+        "sigma_cm1": 3.081112283789429
+      },
+      {
+        "amplitude_uOD": -114.68811506096937,
+        "center_cm1": 1285.4560444045387,
+        "sigma_cm1": 4.131335165732511
+      },
+      {
+        "amplitude_uOD": -157.86732498182823,
+        "center_cm1": 1733.439499104936,
+        "sigma_cm1": 2.7315206324931647
+      },
+      {
+        "amplitude_uOD": 60.94500024120559,
+        "center_cm1": 1741.099744207259,
+        "sigma_cm1": 17.99999924026969
+      },
+      {
+        "amplitude_uOD": 99.08579796904915,
+        "center_cm1": 1318.7377621733053,
+        "sigma_cm1": 6.622754317503922
+      },
+      {
+        "amplitude_uOD": -98.87973674405552,
+        "center_cm1": 1349.96805201694,
+        "sigma_cm1": 2.8351951971534337
+      },
+      {
+        "amplitude_uOD": -176.940174372362,
+        "center_cm1": 1609.4488243751262,
+        "sigma_cm1": 3.4134279611777147
+      },
+      {
+        "amplitude_uOD": 12.280182267086666,
+        "center_cm1": 1619.6344637135583,
+        "sigma_cm1": 1.602139029296755
+      },
+      {
+        "amplitude_uOD": 54.23754902632753,
+        "center_cm1": 1578.8510249488716,
+        "sigma_cm1": 6.250943762073057
+      },
+      {
+        "amplitude_uOD": 138.65093790135666,
+        "center_cm1": 1602.6068105152704,
+        "sigma_cm1": 7.3020618795596155
+      },
+      {
+        "amplitude_uOD": 64.76144907272267,
+        "center_cm1": 1682.2525387682622,
+        "sigma_cm1": 8.272492378081026
+      },
+      {
+        "amplitude_uOD": 288.9157092646926,
+        "center_cm1": 1688.5825707666952,
+        "sigma_cm1": 3.0374191660571292
+      },
+      {
+        "amplitude_uOD": 45.15961923352948,
+        "center_cm1": 1208.8253827502272,
+        "sigma_cm1": 2.596022558191203
+      },
+      {
+        "amplitude_uOD": 1.961722592413497e-09,
+        "center_cm1": 1333.8938204571377,
+        "sigma_cm1": 1.600000006329075
+      },
+      {
+        "amplitude_uOD": 96.30685500252989,
+        "center_cm1": 1346.235958376432,
+        "sigma_cm1": 5.485202782034332
+      }
+    ],
+    "offset": [
+      {
+        "amplitude_uOD": -43.55778359565747,
+        "center_cm1": 1697.314089644673,
+        "sigma_cm1": 5.3722579423322205
+      },
+      {
+        "amplitude_uOD": 32.367576772644554,
+        "center_cm1": 1658.9032467879138,
+        "sigma_cm1": 7.871841734243865
+      },
+      {
+        "amplitude_uOD": -26.58984518062566,
+        "center_cm1": 1635.7444726177812,
+        "sigma_cm1": 4.0852520580616565
+      },
+      {
+        "amplitude_uOD": -48.06988701191398,
+        "center_cm1": 1666.138334504579,
+        "sigma_cm1": 4.623017706391235
+      },
+      {
+        "amplitude_uOD": 21.715464770126257,
+        "center_cm1": 1673.6399672369648,
+        "sigma_cm1": 3.615995122976304
+      },
+      {
+        "amplitude_uOD": 15.619731876221316,
+        "center_cm1": 1569.0428764853366,
+        "sigma_cm1": 3.078091864739674
+      },
+      {
+        "amplitude_uOD": 13.321127519819582,
+        "center_cm1": 1717.6023304157861,
+        "sigma_cm1": 3.984399287625242
+      },
+      {
+        "amplitude_uOD": -12.00096218037612,
+        "center_cm1": 1545.1051636174489,
+        "sigma_cm1": 4.651239614043051
+      },
+      {
+        "amplitude_uOD": -22.16257781821966,
+        "center_cm1": 1749.9213878114595,
+        "sigma_cm1": 3.3630386849402147
+      },
+      {
+        "amplitude_uOD": 6.404553404587776,
+        "center_cm1": 1496.3986305992184,
+        "sigma_cm1": 17.999999999999996
+      },
+      {
+        "amplitude_uOD": 21.638137019959053,
+        "center_cm1": 1753.4685898033972,
+        "sigma_cm1": 3.081112283789429
+      },
+      {
+        "amplitude_uOD": -9.17504920487755,
+        "center_cm1": 1285.4560444045387,
+        "sigma_cm1": 4.131335165732511
+      },
+      {
+        "amplitude_uOD": -12.629385998546258,
+        "center_cm1": 1733.439499104936,
+        "sigma_cm1": 2.7315206324931647
+      },
+      {
+        "amplitude_uOD": 4.8756000192964475,
+        "center_cm1": 1741.099744207259,
+        "sigma_cm1": 17.99999924026969
+      },
+      {
+        "amplitude_uOD": 7.926863837523933,
+        "center_cm1": 1318.7377621733053,
+        "sigma_cm1": 6.622754317503922
+      },
+      {
+        "amplitude_uOD": -7.910378939524442,
+        "center_cm1": 1349.96805201694,
+        "sigma_cm1": 2.8351951971534337
+      },
+      {
+        "amplitude_uOD": -14.15521394978896,
+        "center_cm1": 1609.4488243751262,
+        "sigma_cm1": 3.4134279611777147
+      },
+      {
+        "amplitude_uOD": 0.9824145813669333,
+        "center_cm1": 1619.6344637135583,
+        "sigma_cm1": 1.602139029296755
+      },
+      {
+        "amplitude_uOD": 4.339003922106202,
+        "center_cm1": 1578.8510249488716,
+        "sigma_cm1": 6.250943762073057
+      },
+      {
+        "amplitude_uOD": 11.092075032108532,
+        "center_cm1": 1602.6068105152704,
+        "sigma_cm1": 7.3020618795596155
+      },
+      {
+        "amplitude_uOD": 5.180915925817813,
+        "center_cm1": 1682.2525387682622,
+        "sigma_cm1": 8.272492378081026
+      },
+      {
+        "amplitude_uOD": 23.11325674117541,
+        "center_cm1": 1688.5825707666952,
+        "sigma_cm1": 3.0374191660571292
+      },
+      {
+        "amplitude_uOD": 3.612769538682359,
+        "center_cm1": 1208.8253827502272,
+        "sigma_cm1": 2.596022558191203
+      },
+      {
+        "amplitude_uOD": 1.5693780739307975e-10,
+        "center_cm1": 1333.8938204571377,
+        "sigma_cm1": 1.600000006329075
+      },
+      {
+        "amplitude_uOD": 7.704548400202391,
+        "center_cm1": 1346.235958376432,
+        "sigma_cm1": 5.485202782034332
+      },
+      {
+        "center_cm1": 1699,
+        "amplitude_uOD": -2.4,
+        "sigma_cm1": 5
+      },
+      {
+        "center_cm1": 1662,
+        "amplitude_uOD": 12.4,
+        "sigma_cm1": 8
+      },
+      {
+        "center_cm1": 1623,
+        "amplitude_uOD": -9.6,
+        "sigma_cm1": 16
+      },
+      {
+        "center_cm1": 1561,
+        "amplitude_uOD": -36.0,
+        "sigma_cm1": 8
+      },
+      {
+        "center_cm1": 1545,
+        "amplitude_uOD": 17.2,
+        "sigma_cm1": 5
+      },
+      {
+        "center_cm1": 1473,
+        "amplitude_uOD": -8.8,
+        "sigma_cm1": 11
+      }
+    ]
+  },
+  "offset_definition": {
+    "recombination_fraction": 0.08,
+    "heating_fraction": 0.04,
+    "meaning": "Phenomenological unresolved residual plus persistent heating-like shape; illustrative amplitudes, not a measured late-state decomposition."
+  },
+  "provenance": {
+    "heating_source": "Nelson et al., Methods and Protocols 9, 158 (2026), Section 6.7 and Figs. 7–9; DOI 10.3390/mps9060158",
+    "heating_centers_cm1": [
+      1699,
+      1662,
+      1623,
+      1561,
+      1545,
+      1473
+    ],
+    "published_information": "Principal signed heating-like extrema and a weak negative feature near 1699 cm-1. Gaussian centers use those reported positions; overlapping Gaussians can shift net extrema.",
+    "assumptions": "Gaussian widths/amplitudes and residual fractions are chosen for a readable sensitivity example; they are not fitted or digitized from the publication and do not determine a temperature rise.",
+    "recombination": "The v08 archive-informed analytic approximation is retained without change. No measured spectral matrix is included.",
+    "previous_model_sha256": "d8e27f1c56714808ed36e3d1109ed056ab63423c2f9f636a3f9789c495f140b2",
+    "excluded_inputs": "No blood data or ferrocyanide model is used."
+  },
+  "note": "Heating and offset are revised, so old approximation-quality metrics do not apply. Main plots and demonstrations use the same generator. No new smoothing, baseline correction or normalization."
+}

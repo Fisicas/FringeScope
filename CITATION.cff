@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite the FringeScope version used, together with the relevant primary spectroscopy references."
+type: software
+title: "FringeScope: Time-resolved step-scan FTIR artifact simulator"
+abstract: "An interactive forward-model simulator for mirror-motion artifacts, optical folding and excitation pickup in time-resolved step-scan FTIR, using declared synthetic PSI-inspired difference spectra."
+authors:
+  - family-names: "Nelson"
+    given-names: "Michael Raymond"
+version: "0.11.0"
+license: MIT
+repository-code: "https://github.com/Fisicas/FringeScope"
+url: "https://github.com/Fisicas/FringeScope"
+keywords:
+  - FTIR
+  - time-resolved spectroscopy
+  - step-scan
+  - interferometry
+  - optical aliasing
+  - spectroscopy artifacts

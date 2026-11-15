@@ -1,0 +1,90 @@
+{
+  "settings": {
+    "frequency_hz": 840.0,
+    "amplitude_nm": 2.0,
+    "common_bias_nm": 25.0,
+    "phase_deg": -100.0,
+    "dt_us": 6.0,
+    "duration_us": 3378.0,
+    "selected_cm1": 1697.0,
+    "spectrum_us": 100.0,
+    "electrical_fraction": 0.0002,
+    "repetition_hz": 10.0,
+    "detuned_repetition_hz": 10.01,
+    "demonstration_coadds": 8,
+    "harmonic_samples": 2048
+  },
+  "reference": {
+    "citation": "Rödig, C.; Siebert, F. Applied Spectroscopy 53, 893–901 (1999)",
+    "doi": "https://doi.org/10.1366/0003702991947595",
+    "scope": "Figs. 3–9; phase-correlated averaging on printed pp. 897–898. Original simulations, not digitized data.",
+    "paper_drive": "Imposed ±4 nm at 50 Hz; distinct from this illustrative 2 nm at 840 Hz."
+  },
+  "assumptions": [
+    "All figures are synthetic; no measured arrays, smoothing, baseline subtraction or per-trace normalization.",
+    "Fixed-real spectral readout; exact uniform-displacement cosine, not production fourth-order shifts.",
+    "Stationary reference at the same common bias; baseline time zero is an acquisition origin, not a flash.",
+    "Motion and electrical pickup are evaluated at 6 us bin centers; within-bin dynamics are not integrated.",
+    "Chemical lesson uses native 6 us bin-averaged chemical bases and bin-center, flash-gated motion.",
+    "Coherent phase across OPD is imposed to isolate shot timing. No free-running step-phase schedule or random noise is added.",
+    "Average intensity before logarithm. Coherence factors refer to intensity harmonics, not a universal OD attenuation.",
+    "AC detector component only; total unmodulated detector DC is not represented.",
+    "Electrical coupling is an assumed Gaussian localized about ZPD, width one half of an OPD step."
+  ],
+  "selected_actual_cm1": 1697.0438984082032,
+  "spectral_axis": "descending",
+  "full_band_cm1": [
+    2106.3914569333333,
+    1053.1957284666667
+  ],
+  "baseline_time_us": [
+    0.0,
+    3378.0
+  ],
+  "selected_OPD_um": [
+    0.0,
+    -4.747455638924241,
+    4.747455638924241,
+    37.97964511139393,
+    151.9185804455757
+  ],
+  "harmonic_amplitudes_uOD": {
+    "Zero bias": [
+      0.0,
+      1.9751110071604345,
+      0.0,
+      1.4970890929767788e-06
+    ],
+    "Common bias": [
+      98.84937573887801,
+      1.9807357785528346,
+      0.00015027805616291056,
+      1.5141803658289158e-06
+    ]
+  },
+  "paired_OD_f_amplitude_uOD": 0.0,
+  "paired_OD_2f_amplitude_uOD": 1.9751110071600695,
+  "zero_bias_f_to_2f": 0.0,
+  "common_bias_f_to_2f": 49.905382034901876,
+  "coadd_coherence_at_N8": {
+    "10 Hz repetition": [
+      1.0,
+      1.0
+    ],
+    "10.01 Hz repetition": [
+      0.41186328546827616,
+      0.21868903172571777
+    ],
+    "180° pairs": [
+      6.123233995736766e-17,
+      1.0
+    ]
+  },
+  "roundoff_policy": "Harmonic amplitudes remain unrounded in numerical exports; figures mark values below 1e-6 uOD as below display floor.",
+  "application_version": "0.9.0",
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2"
+  }
+}

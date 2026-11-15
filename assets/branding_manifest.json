@@ -1,0 +1,10 @@
+{
+  "name": "FringeScope",
+  "subtitle": "Time-resolved step-scan FTIR artifact simulator",
+  "version": "0.11.0",
+  "selected_direction": "C \u2014 Spectral focus / magnifying lens",
+  "artwork": "Original editable SVG with locally rendered PNG and multiresolution ICO",
+  "small_icon": "Simplified mark at 16, 20 and 24 px",
+  "decorative_waveform": "Analytic artwork; not measured or simulated spectra",
+  "splash": "Background has no baked-in progress text; startup.py draws live stages"
+}

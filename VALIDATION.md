@@ -1,0 +1,17 @@
+# Validation record
+
+The v11 baseline passed 45 regression tests and standalone/installed smoke checks, plus installation, same-version replacement, stale-runtime removal, export preservation and uninstall on the development Windows 11 x64 workstation. The user reported successful stage-5 native usability testing on November 15, 2026. Specific devices/scales and a clean-second-host test were not reported.
+
+The prepared release source adds MIT licensing, citation/release documentation and dependency notices, and removes three unused historical/static plotting functions. The numerical engine, model JSON and waveform defaults are unchanged. The prepared source passed all 45 regression tests. Its standalone executable passed startup, 21 offline theory elements in both themes, fixed demonstrations, tour restoration and finite descending export from a separate working directory. Synthetic example files and three screenshots were regenerated. The deterministic source-tree audit found no excluded measurement/document/font files, private home paths, credential patterns or broken local links in its checked scope. The final prepared installer also passed current-user installation, same-version replacement, stale-runtime cleanup, preservation of exported user files and uninstall of the dedicated test copy. See docs/VALIDATION_RESULTS.json for the public summary.
+
+Tested baseline: Python 3.12.10 x64, NumPy 2.5.3, SciPy 1.18.1, Matplotlib 3.11.2, PySide6-Essentials 6.11.2 and packaging 26.3. Dependency ranges in metadata do not establish validation for all versions. Motion/electrical terms use bin centers; chemical/pulse bases use their declared integration rules. No experimental mechanism, confidence interval, calibrated optical response or temperature change is inferred.
+
+The browser edition is recorded separately in docs/WEB_VALIDATION.md: 51/51 tests including six web-equivalence tests, and 20/20 browser-versus-native parity scenarios in Pyodide 314.0.8 (NumPy 2.4.6, SciPy 1.18.0) on this workstation. Real mobile-device trials are not yet done.
+
+Remaining release gates: a clean second-host trial; final binary dependency/source/build-input and modified-library replacement review; and a live newer-release update after publication is authorized. The installer is unsigned. Review-build checks remain disabled; no remote publication or DOI work is implied by these tests.
+
+## Prepublication audit repairs
+
+The repaired candidate passes 56 Python regression tests, including stale result-ID rejection, unique scratch-directory cleanup, preservation of existing files, exact browser/native free-fit tour restoration, and scrollable plots at 1280 × 640. The real-Chrome regression checks locked four-panel exports, export during pending calculation, exact tour fit restoration including worker export, and a 375 px Theory page without horizontal overflow. All 20 browser/native numerical parity scenarios pass. The shared science environment was not upgraded. Existing Matplotlib/Qt deprecation warnings remain in the pinned environment; no numerical failure is inferred from them.
+
+The browser test script is web/tools/check_browser_repairs.py; its required Playwright package is an optional development tool, not an app dependency. Test browser inspection hooks exist only in substituted local test responses. Repaired binaries and their expanded self-test results are recorded in the local release-review packet after building. Publication and update checks remain on hold.

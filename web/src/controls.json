@@ -1,0 +1,71 @@
+{
+  "_comment": "Mirror of app.MainWindow.build_controls(). Keys, defaults, ranges, steps and combo items are checked against the desktop widgets by tests/test_web_edition.py. Help text is generated from ui_help.py at build time.",
+  "sections": [
+    {"title": "Mirror motion", "toggle": "wobble", "source": "mirror", "controls": [
+      {"key": "mirror_nm", "label": "Amplitude (nm)", "type": "number", "value": 2, "min": 0, "max": 20, "step": 0.25},
+      {"key": "frequency_hz", "label": "Frequency (Hz)", "type": "number", "value": 840, "min": 10, "max": 10000, "step": 5},
+      {"key": "phase_deg", "label": "Temporal phase (°)", "type": "number", "value": -100, "min": -180, "max": 180, "step": 5},
+      {"key": "bias_nm", "label": "Common bias (nm)", "type": "number", "value": 25, "min": -50, "max": 50, "step": 1},
+      {"key": "waveform", "label": "Motion waveform", "type": "select", "value": "sine", "items": [["sine", "Biased sinusoid"], ["harmonic2", "Composite: f + 2f"], ["harmonic3", "Composite: f + 2f + 3f"], ["servo", "Composite: servo-like"], ["envelope", "Composite: envelope"]]}
+    ], "details": [{"title": "Detailed motion settings", "controls": [
+      {"key": "second_ratio", "label": "2f / fundamental", "type": "number", "value": 0.15754, "min": 0, "max": 1, "step": 0.02},
+      {"key": "second_phase_deg", "label": "2f phase (°)", "type": "number", "value": -99.39, "min": -180, "max": 180, "step": 5},
+      {"key": "third_ratio", "label": "3f / fundamental", "type": "number", "value": 0.06076, "min": 0, "max": 1, "step": 0.02},
+      {"key": "third_phase_deg", "label": "3f phase (°)", "type": "number", "value": -44.88, "min": -180, "max": 180, "step": 5},
+      {"key": "chirp_hz_per_ms", "label": "Frequency drift (Hz/ms)", "type": "number", "value": 0, "min": -150, "max": 150, "step": 5},
+      {"key": "envelope_slope", "label": "Envelope slope", "type": "number", "value": 0, "min": -3, "max": 3, "step": 0.1},
+      {"key": "quadrature_slope", "label": "Quadrature slope", "type": "number", "value": 0, "min": -3, "max": 3, "step": 0.1},
+      {"key": "servo_fraction", "label": "Servo-step fraction", "type": "number", "value": 0.15, "min": 0, "max": 1, "step": 0.05},
+      {"key": "phase_mode", "label": "Step/shot phase", "type": "select", "value": "locked", "items": [["locked", "Trigger locked"], ["random", "Random step/shot"], ["free", "Free running"]]},
+      {"key": "coadds", "label": "Coadds per step", "type": "integer", "value": 10, "min": 1, "max": 100, "step": 1},
+      {"key": "repetition_hz", "label": "Repetition (Hz)", "type": "number", "value": 10, "min": 1, "max": 50, "step": 1},
+      {"key": "settle_ms", "label": "Settling (ms)", "type": "number", "value": 10, "min": 0, "max": 1000, "step": 1}
+    ]}]},
+    {"title": "Globar leakage", "toggle": "globar", "source": "globar", "controls": [
+      {"key": "globar_fraction", "label": "Folded leak scale", "type": "number", "value": 0.1, "min": 0, "max": 10, "step": 0.05},
+      {"key": "blocking_od", "label": "Blocking (OD)", "type": "number", "value": 0, "min": 0, "max": 10, "step": 0.5}
+    ], "details": [{"title": "Filter / transient assumptions", "controls": [
+      {"key": "leak_center", "label": "Leak center (cm⁻¹)", "type": "number", "value": 3300, "min": 100, "max": 9000, "step": 100},
+      {"key": "leak_width", "label": "Leak σ (cm⁻¹)", "type": "number", "value": 550, "min": 10, "max": 3000, "step": 50},
+      {"key": "leak_transient_ppm", "label": "Changing leak (ppm)", "type": "number", "value": 0, "min": -10000, "max": 10000, "step": 100}
+    ]}]},
+    {"title": "532 nm actinic leakage", "toggle": "laser", "source": "laser", "controls": [
+      {"key": "laser_area_us", "label": "Pulse area / IFG (µs)", "type": "number", "value": 0.00002, "min": 0, "max": 0.1, "step": 0.00001},
+      {"key": "laser_blocking_od", "label": "Blocking (OD)", "type": "number", "value": 0, "min": 0, "max": 12, "step": 0.5}
+    ], "details": [{"title": "Pulse and optical path", "controls": [
+      {"key": "laser_route", "label": "Optical path", "type": "select", "value": "interferometric", "items": [["interferometric", "OPD-modulated return"], ["bypass_uniform", "Uniform direct bypass"], ["bypass_scatter", "Step-dependent bypass"]]},
+      {"key": "pulse_fwhm_ns", "label": "Optical FWHM (ns)", "type": "number", "value": 6, "min": 0.1, "max": 200, "step": 1},
+      {"key": "reflection_ns", "label": "Reflection tail (ns)", "type": "number", "value": 20, "min": 0, "max": 300, "step": 5},
+      {"key": "response_us", "label": "Electronics τ (µs)", "type": "number", "value": 0.15, "min": 0, "max": 100, "step": 0.1},
+      {"key": "laser_delay_us", "label": "Pulse delay (µs)", "type": "number", "value": 0, "min": -20, "max": 100, "step": 0.01}
+    ]}]},
+    {"title": "Chemical model and fitting", "controls": [
+      {"key": "heat_tau", "label": "Fast heating τ (µs)", "type": "number", "value": 12.159431012654633, "min": 0.5, "max": 100, "step": 1},
+      {"key": "rp_tau", "label": "Recombination τ (µs)", "type": "number", "value": 449.14283667622936, "min": 25, "max": 10000, "step": 10},
+      {"key": "heat_scale", "label": "Fast heating amplitude ×", "type": "number", "value": 1, "min": 0, "max": 5, "step": 0.1},
+      {"key": "rp_scale", "label": "Decaying PSI amplitude ×", "type": "number", "value": 1, "min": 0, "max": 5, "step": 0.1},
+      {"key": "offset_scale", "label": "Unresolved offset ×", "type": "number", "value": 1, "min": 0, "max": 5, "step": 0.1},
+      {"key": "fit_start", "label": "Fit from (µs)", "type": "number", "value": 0, "min": 0, "max": 3300, "step": 6},
+      {"key": "fit_stop", "label": "Fit to (µs)", "type": "number", "value": 3378, "min": 50, "max": 3381, "step": 60},
+      {"key": "fit_low", "label": "Fit low (cm⁻¹)", "type": "number", "value": 1200, "min": 1053.1957284666667, "max": 2106.3914569333334, "step": 10},
+      {"key": "fit_high", "label": "Fit high (cm⁻¹)", "type": "number", "value": 1900, "min": 1053.1957284666667, "max": 2106.3914569333334, "step": 10},
+      {"key": "offset", "label": "Fit non-decaying offset", "type": "checkbox", "value": true, "help": "Include a constant spectral-amplitude basis in the fit. This does not remove the input offset; use Unresolved offset × to change the simulated signal."}
+    ], "refit": true},
+    {"title": "Advanced effects / readout", "controls": [
+      {"key": "phase_readout", "label": "Phase readout", "type": "select", "value": "real", "items": [["real", "Fixed-phase real"], ["magnitude", "Magnitude comparison"]]}
+    ], "subsections": [
+      {"title": "Electrical pickup", "toggle": "electrical", "controls": [
+        {"key": "electrical_mode", "label": "Frequency source", "type": "select", "value": "mains", "items": [["mains", "60 Hz harmonic"], ["free", "Free frequency"]]},
+        {"key": "mains_harmonic", "label": "Mains harmonic n", "type": "integer", "value": 14, "min": 1, "max": 100, "step": 1, "show_if": ["electrical_mode", "mains"]},
+        {"key": "electrical_frequency", "label": "Free frequency (Hz)", "type": "number", "value": 840, "min": 10, "max": 100000, "step": 10, "show_if": ["electrical_mode", "free"]},
+        {"key": "electrical_fraction", "label": "Pickup / IFG peak", "type": "number", "value": 0.0002, "min": 0, "max": 0.05, "step": 0.0001},
+        {"key": "electrical_phase_deg", "label": "Temporal phase (°)", "type": "number", "value": 0, "min": -180, "max": 180, "step": 5}
+      ]},
+      {"title": "Return-position mismatch", "toggle": "zpd", "controls": [
+        {"key": "return_nm", "label": "Return offset (nm)", "type": "number", "value": 2, "min": -20, "max": 20, "step": 0.5},
+        {"key": "jitter_nm", "label": "Step jitter SD (nm)", "type": "number", "value": 1, "min": 0, "max": 20, "step": 0.25}
+      ]}
+    ]}
+  ],
+  "selection": {"wavenumber": 1697, "time_us": 100, "time_min": -153, "time_max": 3381, "time_step": 6}
+}

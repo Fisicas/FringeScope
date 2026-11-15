@@ -1,0 +1,11 @@
+# Qt/PySide source and shared-library replacement
+
+FringeScope's MIT application source is supplied in full. Its Qt/PySide components are separate shared libraries in the installed `_internal` directory; no application-side signature check or deliberate restriction on debugging/replacing them is imposed. The update installer cleans `_internal`, so retain local modifications/backups separately before reinstalling.
+
+The prepared source companion contains the four unmodified upstream 6.11.2 archives listed in QT_SOURCE_ARCHIVES.json. Publish those companion sources beside an approved binary, with the full notices. Official source access: https://download.qt.io/archive/qt/6.11/6.11.2/submodules/ and https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.11.2-src/ . Source licenses and third-party attributions are preserved in Qt-upstream.
+
+To develop with compatible modified libraries, build matching Windows x64 Qt Base/Qt SVG and pyside-setup/shiboken using upstream build instructions and compatible Python/ABI/compiler settings, then test a source installation with those libraries before making a separate copy of the standalone app. Replace a coherent set of shared dependencies in that test copy rather than mixing arbitrary DLL versions. Preserve license notices and document modifications. Rebuild the application with tools/build_windows.py when packaging a modified runtime. Upstream build documentation: https://doc.qt.io/qt-6.11/windows-building.html and https://doc.qt.io/qtforpython-6/building_from_source/index.html .
+
+This is source/rebuild information, not a claim that a compatible modified-library replacement or the upstream wheel's complete build configuration was reproduced. Record that trial and confirm the final binary's corresponding-source/build inputs before approving binary redistribution. Do not describe the unresolved verification as completed LGPL compliance certification.
+
+Copied notice filenames are shortened to avoid Windows installer path-length failures. NOTICE_PATHS.json maps every original relative path to the copied file and its unchanged SHA-256; original archive trees are retained in the source companion. Relative LicenseFile entries inside upstream attribution JSON refer to those original archive paths.

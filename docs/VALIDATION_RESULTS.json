@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-15",
+  "prepared_version": "0.11.0",
+  "regression_tests": {
+    "passed": 45,
+    "command": "python -X utf8 -m pytest -q tests"
+  },
+  "prepared_frozen_smoke": {
+    "passed": true,
+    "groups": [
+      "startup and ideal signal",
+      "21 offline theory equation/figure elements in both themes",
+      "fixed demonstrations",
+      "guided-tour restoration",
+      "finite descending export"
+    ]
+  },
+  "user_reported_native_usability_accepted": true,
+  "user_device_matrix_reported": false,
+  "clean_second_host_tested": false,
+  "live_newer_release_update_tested": false,
+  "network_update_checks_enabled": false,
+  "software_license": "MIT",
+  "qt_source_archives_upstream_sha256_verified": 4,
+  "collected_python_distributions_with_notice_files": 30,
+  "scientific_inputs_sha256": {
+    "ftir_sim.py": "3a3b4f51745626ae0994911f86fc57c5b8796e9f62b9ebf635fa32f59ff1e6c8",
+    "synthetic_model.json": "a2d45fd6ea6003220de805bc1f70866c5a17511ad1dae0278a027f2a88f6e30b",
+    "waveform_defaults.json": "9692dc0d0e32fbb25228ddd064551b28b831c5de3de5bd7900857133f05ea14e"
+  },
+  "scope": "Checks establish declared synthetic behavior and packaging on the development host; they do not identify an experimental mechanism.",
+  "prepared_installer_round_trip": {
+    "passed": true,
+    "checks": [
+      "current-user install in path with spaces",
+      "installed frozen startup/offline theory/export",
+      "same-version in-place replacement",
+      "obsolete runtime cleanup",
+      "export preserved",
+      "uninstall removes test app and preserves user output"
+    ]
+  },
+  "audit_repairs": {
+    "python_regressions_passed": 56,
+    "browser_regressions": [
+      "mid-export editing blocked",
+      "four panels match committed data",
+      "pending computation awaited",
+      "exact free-fit tour/worker restore",
+      "375px Theory references wrap"
+    ],
+    "browser_parity_passed": 20,
+    "numerical_engine_and_model_unchanged": true,
+    "real_mobile_devices_tested": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "label": "Archive-informed three-harmonic signal shape; conditional displacement hypothesis",
+  "frequency_hz": 856.4471864594703,
+  "phase_deg": -99.40225900748463,
+  "second_ratio": 0.1575399820048894,
+  "second_phase_deg": 260.61292085957905,
+  "third_ratio": 0.060762522395292735,
+  "third_phase_deg": 315.1160269771554,
+  "chirp_hz_per_ms": 0.0,
+  "envelope_slope": 0.0,
+  "caveat": "Fitted to band-free intensity signal, not measured mirror motion. Mapping to mirror drive assumes a biased approximately linear response.",
+  "envelope_scenario": {
+    "frequency_hz": 770.4135905173205,
+    "phase_deg": -36.2383330946693,
+    "envelope_slope": 2.22670388454439,
+    "quadrature_slope": 1.4200630660080702,
+    "second_ratio": 0.02151461794340987,
+    "third_ratio": 0.1392450919227123,
+    "second_phase_deg": 38.80373018797036,
+    "third_phase_deg": 162.56878988748485
+  }
+}

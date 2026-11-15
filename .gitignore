@@ -1,0 +1,16 @@
+.venv/
+.build-venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+dist/
+installer/
+build-output/
+qa_*/
+*.log
+FringeScope_run_*/
+demonstrations_v*/
+
+# Generated static web build (python -X utf8 web/build_web.py)
+web/site/

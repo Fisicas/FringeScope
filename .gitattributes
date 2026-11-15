@@ -1,0 +1,7 @@
+# Keep text byte-identical across Windows and the Linux Pages runner: the web
+# build verifies engine files by SHA-256.
+* text=auto eol=lf
+*.png binary
+*.ico binary
+*.zip binary
+*.exe binary
