@@ -4,6 +4,8 @@
 
 **Time-resolved step-scan FTIR artifact simulator**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24266818.svg)](https://doi.org/10.5281/zenodo.24266818)
+
 [Open the browser app](https://Fisicas.github.io/FringeScope/) · [Theory and evidence](desktop/THEORY.md) · [Documentation](docs/README.md) · [Install on Windows](docs/INSTALLATION.md)
 
 Explore how mirror motion, continuous out-of-band globar leakage and pulsed 532 nm actinic pickup change a synthetic flash-induced difference spectrum modeled on photosystem I (PSI). Linked contour, spectrum, kinetic and decay-associated spectrum (DAS) views let you compare the ideal signal with selected artifacts. All displayed signals are simulated.
@@ -76,7 +78,7 @@ Figure generators preserve numerical provenance. `desktop/build_convergence.py` 
 
 ## Citation, license and development
 
-Cite **Michael Raymond Nelson, FringeScope, version 0.11.0**, with the repository URL and version used; [CITATION.cff](CITATION.cff) provides machine-readable metadata. Cite the relevant primary spectroscopy papers for scientific claims. A software DOI will be added after archival publication.
+Cite **Nelson, M. R. (2026). FringeScope: Time-resolved step-scan FTIR artifact simulator (version 0.11.0). Zenodo. [https://doi.org/10.5281/zenodo.24266818](https://doi.org/10.5281/zenodo.24266818)**. That DOI identifies version 0.11.0, released November 16, 2026; [10.5281/zenodo.24266817](https://doi.org/10.5281/zenodo.24266817) always resolves to the latest version. [CITATION.cff](CITATION.cff) provides machine-readable metadata. Cite the relevant primary spectroscopy papers for scientific claims.
 
 Original FringeScope code, documentation and synthetic model inputs are under the [MIT license](LICENSE). Third-party components retain their own licenses; see [notices](desktop/THIRD_PARTY_NOTICES.md). No UFit code, proprietary font files or literature PDFs are included. See [contributing](docs/CONTRIBUTING.md), [changelog](docs/CHANGELOG.md) and [release notes](docs/RELEASE_NOTES_0.11.0.md).
 

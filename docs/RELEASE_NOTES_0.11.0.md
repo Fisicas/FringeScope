@@ -8,4 +8,4 @@ All spectra are simulated. The source includes analytic model inputs and two doc
 
 Validation evidence and its chronology are in [VALIDATION.md](VALIDATION.md) and [WEB_VALIDATION.md](WEB_VALIDATION.md). Bundled Qt/PySide binaries are byte-identical to the official 6.11.2 wheels, matching source archives accompany the binaries, and a Qt-library substitution trial passed. Real mobile devices, a clean second Windows host and a Qt rebuild from modified source remain untested. Update checks are disabled in 0.11.0. No live newer-release update is claimed.
 
-Original application code, documentation and synthetic inputs are MIT licensed. Third-party components retain their own terms. Citation metadata is in `CITATION.cff`; the release date and DOI must correspond to actual publication.
+Original application code, documentation and synthetic inputs are MIT licensed. Third-party components retain their own terms. Citation metadata is in `CITATION.cff`. Released November 16, 2026; archived at Zenodo, DOI [10.5281/zenodo.24266818](https://doi.org/10.5281/zenodo.24266818).

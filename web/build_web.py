@@ -351,7 +351,8 @@ def tutorial_page(build):
 
 def cite_page(build):
     bibtex = (f'@software{{FringeScope,\n  author  = {{Nelson, Michael Raymond}},\n  title   = {{FringeScope: Time-resolved step-scan FTIR artifact simulator}},\n'
-              f'  version = {{{VERSION}}},\n  url     = {{{REPO}}},\n  license = {{MIT}}\n}}')
+              f'  version = {{{VERSION}}},\n  year    = {{2026}},\n  publisher = {{Zenodo}},\n  doi     = {{10.5281/zenodo.24266818}},\n'
+              f'  url     = {{{REPO}}},\n  license = {{MIT}}\n}}')
     refs = ''.join(reference_html(e) for e in bib_entries())
     headings = [('Desktop application', 'desktop'), ('Cite FringeScope', 'cite'), ('License', 'license'), ('Web edition: how it runs', 'web-edition'),
                 ('Privacy', 'privacy'), ('Primary references', 'references')]
@@ -364,9 +365,9 @@ def cite_page(build):
   <div class="card"><h3>Source</h3><p>Python 3.12 with pinned NumPy, SciPy, Matplotlib and PySide6. Includes tests and figure generators.</p><p><a class="btn" href="{REPO}">Repository</a></p></div>
 </div>
 <h2 id="cite">Cite FringeScope<a class="anchor" href="#cite" aria-label="Link to this section">#</a></h2>
-<p>Cite the version you used, and cite the primary spectroscopy papers for scientific claims. No software DOI has been assigned yet.</p>
+<p>Cite the version you used, and cite the primary spectroscopy papers for scientific claims. Version 0.11.0 is archived at Zenodo with DOI <a href="https://doi.org/10.5281/zenodo.24266818">10.5281/zenodo.24266818</a>; <a href="https://doi.org/10.5281/zenodo.24266817">10.5281/zenodo.24266817</a> always resolves to the latest version.</p>
 <p>Author: Michael Raymond Nelson, ORCID <a href="https://orcid.org/0009-0004-9809-9842">0009-0004-9809-9842</a>.</p>
-<pre class="cite">Nelson, M. R. FringeScope: Time-resolved step-scan FTIR artifact simulator (version {VERSION}) [Computer software]. {REPO}</pre>
+<pre class="cite">Nelson, M. R. FringeScope: Time-resolved step-scan FTIR artifact simulator (version {VERSION}) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.24266818</pre>
 <pre class="cite">{html.escape(bibtex)}</pre>
 <p>Machine-readable metadata: <code>CITATION.cff</code> in the repository.</p>
 <h2 id="license">License<a class="anchor" href="#license" aria-label="Link to this section">#</a></h2>

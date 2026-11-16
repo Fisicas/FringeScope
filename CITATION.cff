@@ -16,6 +16,15 @@ authors:
   given-names: Michael Raymond
   orcid: https://orcid.org/0009-0004-9809-9842
 version: 0.11.0
+date-released: '2026-11-16'
+doi: 10.5281/zenodo.24266817
+identifiers:
+- type: doi
+  value: 10.5281/zenodo.24266817
+  description: Concept DOI for all versions of FringeScope.
+- type: doi
+  value: 10.5281/zenodo.24266818
+  description: Version DOI for FringeScope 0.11.0.
 license: MIT
 repository-code: https://github.com/Fisicas/FringeScope
 url: https://Fisicas.github.io/FringeScope/
