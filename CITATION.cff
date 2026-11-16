@@ -1,19 +1,28 @@
 cff-version: 1.2.0
-message: "Please cite the FringeScope version used, together with the relevant primary spectroscopy references."
+message: Please cite the FringeScope version used, together with the relevant primary spectroscopy references.
 type: software
-title: "FringeScope: Time-resolved step-scan FTIR artifact simulator"
-abstract: "An interactive forward-model simulator for mirror-motion artifacts, optical folding and excitation pickup in time-resolved step-scan FTIR, using declared synthetic PSI-inspired difference spectra."
+title: 'FringeScope: Time-resolved step-scan FTIR artifact simulator'
+abstract: FringeScope is an interactive forward simulator of artifacts in time-resolved step-scan FTIR
+  spectroscopy. A declared synthetic photosystem I (PSI)-inspired difference signal with two bin-averaged exponential
+  components and a causal non-decaying residual is compared with mirror-motion, optical-folding, continuous
+  globar-leakage and pulsed 532 nm actinic-pickup models. Optional electrical pickup and registration
+  mismatch are sensitivity models. Linked contour, spectrum, kinetic and decay-associated spectrum views
+  are available in a Python/Qt desktop application and a browser edition using the same scientific engine.
+  The source includes analytic model inputs, synthetic CSV examples, original simulated figures, equations
+  and primary references. No experimental spectral matrix is distributed. Model agreement does not identify
+  an experimental artifact mechanism.
 authors:
-  - family-names: "Nelson"
-    given-names: "Michael Raymond"
-version: "0.11.0"
+- family-names: Nelson
+  given-names: Michael Raymond
+  orcid: https://orcid.org/0009-0004-9809-9842
+version: 0.11.0
 license: MIT
-repository-code: "https://github.com/Fisicas/FringeScope"
-url: "https://github.com/Fisicas/FringeScope"
+repository-code: https://github.com/Fisicas/FringeScope
+url: https://Fisicas.github.io/FringeScope/
 keywords:
-  - FTIR
-  - time-resolved spectroscopy
-  - step-scan
-  - interferometry
-  - optical aliasing
-  - spectroscopy artifacts
+- FTIR
+- time-resolved spectroscopy
+- step-scan
+- interferometry
+- optical aliasing
+- spectroscopy artifacts

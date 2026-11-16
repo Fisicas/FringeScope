@@ -52,5 +52,6 @@
     "browser_parity_passed": 20,
     "numerical_engine_and_model_unchanged": true,
     "real_mobile_devices_tested": false
-  }
+  },
+  "record_scope": "Historical development-run results and original Windows-working-copy hashes. Current released-byte hashes are in docs/examples/settings.json and the external asset manifest."
 }

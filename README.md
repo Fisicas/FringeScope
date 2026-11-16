@@ -6,15 +6,17 @@
 
 [Open the browser app](https://Fisicas.github.io/FringeScope/) · [Theory and evidence](desktop/THEORY.md) · [Documentation](docs/README.md) · [Install on Windows](docs/INSTALLATION.md)
 
-Explore how mirror motion, continuous out-of-band globar leakage and pulsed 532 nm actinic pickup change a synthetic difference spectrum. Linked contour, spectrum, kinetic and decay-associated spectrum views let you compare the ideal signal with selected artifacts. All displayed signals are simulated.
+Explore how mirror motion, continuous out-of-band globar leakage and pulsed 532 nm actinic pickup change a synthetic flash-induced difference spectrum modeled on photosystem I (PSI). Linked contour, spectrum, kinetic and decay-associated spectrum (DAS) views let you compare the ideal signal with selected artifacts. All displayed signals are simulated.
+
+FringeScope is a teaching and experiment-planning tool. It shows what a declared disturbance would do to a known signal, which helps when choosing controls for a real experiment. It does not analyze measured data or identify the cause of a feature in a measurement.
 
 ![FringeScope simulated ideal signal](docs/images/explore_dark.png)
 
 ## Start here
 
-The prepared version is **0.11.0**. This source tree is being reviewed for its initial release; no public release or DOI is asserted here.
+The current version is **0.11.0**. The browser app is deployed on GitHub Pages. Source, a Windows installer and a portable Windows build are the software distributions; their publication status is recorded on [GitHub Releases](https://github.com/Fisicas/FringeScope/releases).
 
-Windows users can install the prepared `FringeScope-setup.exe` without administrator privileges. A standalone folder build is also available locally. Keep its `FringeScope.exe` and `_internal` folder together. See [installation and troubleshooting](docs/INSTALLATION.md).
+Windows users can install the `FringeScope-setup.exe` without administrator privileges. The portable ZIP contains the standalone folder build. Keep its `FringeScope.exe` and `_internal` folder together. See [installation and troubleshooting](docs/INSTALLATION.md).
 
 For source use, install Python 3.12 x64 and the pinned requirements in a new virtual environment, then run:
 
@@ -74,17 +76,17 @@ Figure generators preserve numerical provenance. `desktop/build_convergence.py` 
 
 ## Citation, license and development
 
-Cite **Michael Raymond Nelson, FringeScope, version 0.11.0**, with the repository URL and version used; [CITATION.cff](CITATION.cff) provides machine-readable metadata. Cite the relevant primary spectroscopy papers for scientific claims. No software DOI has been assigned in this preparation step.
+Cite **Michael Raymond Nelson, FringeScope, version 0.11.0**, with the repository URL and version used; [CITATION.cff](CITATION.cff) provides machine-readable metadata. Cite the relevant primary spectroscopy papers for scientific claims. A software DOI will be added after archival publication.
 
 Original FringeScope code, documentation and synthetic model inputs are under the [MIT license](LICENSE). Third-party components retain their own licenses; see [notices](desktop/THIRD_PARTY_NOTICES.md). No UFit code, proprietary font files or literature PDFs are included. See [contributing](docs/CONTRIBUTING.md), [changelog](docs/CHANGELOG.md) and [release notes](docs/RELEASE_NOTES_0.11.0.md).
 
 ## Browser edition
 
-FringeScope Web runs the same `ftir_sim.py` in a phone, tablet or desktop browser through Pyodide (Python and NumPy/SciPy compiled to WebAssembly) in a background worker. No server or install is needed, and calculations stay on the device. It offers linked Explore views, the guided tour, the fixed demonstrations, a Wikipedia-style theory article generated from THEORY.md, and ZIP exports produced by the desktop export function. The Windows application remains the reference edition.
+FringeScope Web runs the same `ftir_sim.py` in a phone, tablet or desktop browser through Pyodide (Python and NumPy/SciPy compiled to WebAssembly) in a background worker. No server or install is needed, and calculations stay on the device. It offers linked Explore views, the guided tour, the fixed demonstrations, a theory article generated from THEORY.md, and ZIP exports produced by the desktop export function. The Windows application remains the reference edition.
 
 ```powershell
 & '.venv\Scripts\python.exe' -X utf8 web\build_web.py
 & '.venv\Scripts\python.exe' -X utf8 -m http.server 8000 --directory web\site
 ```
 
-Then open `http://localhost:8000/`. The first visit downloads about 20 MB of pinned runtime from jsDelivr. `validate.html` compares browser results with native desktop fixtures on your own device. See [web edition plan](docs/WEB_EDITION_PLAN.md) and [web validation](docs/WEB_VALIDATION.md). The Pages address is [Fisicas.github.io/FringeScope](https://Fisicas.github.io/FringeScope/). Deployment uses the manual **Deploy web edition (manual)** workflow; a source push does not deploy it automatically. Zenodo integration and DOI registration are deferred.
+Then open `http://localhost:8000/`. The first visit downloads about 20 MB of pinned runtime from jsDelivr. `validate.html` compares browser results with native desktop fixtures on your own device. See [web edition guide](docs/WEB_EDITION_PLAN.md) and [web validation](docs/WEB_VALIDATION.md). The Pages address is [Fisicas.github.io/FringeScope](https://Fisicas.github.io/FringeScope/). Deployment uses the manual **Deploy web edition (manual)** workflow; a source push does not deploy it automatically. The browser runtime is downloaded separately; a web ZIP is not a fully offline installation.

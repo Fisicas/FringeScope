@@ -1,0 +1,9 @@
+# Release scope and evidence
+
+FringeScope 0.11.0 offers a Python/Qt Windows application, a deployed Pyodide browser application, analytic synthetic model inputs, two example CSV slices, fixed synthetic demonstrations, numerical checks, theory and primary references. The source archive contains no measured PSI spectral matrix. Examples are software resources under MIT; this release is not a separately validated experimental dataset.
+
+The model shows how specified motion, leakage, pulse response, coupling, coaddition and fit choices change synthetic spectra and DAS. Tests check algebra, causal/bin-integrated bases, masks, sign, descending wavenumbers, repeatability and browser/native agreement. They establish implementation consistency within the tested settings and runtime, not uniqueness of physical mechanisms, experimental calibration, uncertainty intervals or predictive validation against measured spectra. See [model assumptions](../desktop/MODEL_ASSUMPTIONS.md) for the displacement convergence limits and assumed optical/electrical responses.
+
+The static web ZIP requires an external pinned runtime. Windows binaries include additional libraries with their own licenses and source obligations. Bundled Qt/PySide binaries were checked against the official 6.11.2 wheels and a library-substitution trial passed (see `desktop/THIRD_PARTY_NOTICES.md`). Code signing, real mobile trials, clean-second-host portability and a Qt rebuild from modified source are not established here. Update network checks remain disabled.
+
+Historical validation records retain the byte hashes and chronology of their actual runs. LF normalization preserves application text content but changes some byte hashes from Windows development copies. Current example hashes and release manifests identify the distributed bytes; historical claims of byte identity must not be read as hashes of a later archive.

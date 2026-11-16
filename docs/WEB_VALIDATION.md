@@ -1,6 +1,6 @@
 # FringeScope Web: validation record
 
-Recorded November 15, 2026 for the local preview build of the browser edition. Nothing was deployed. The site was served from `web/site` on a local HTTP server and opened in the Chromium-based browser pane of the Claude desktop app on the Windows 11 development workstation.
+The following initial validation was recorded November 15, 2026 for a locally served browser build. Pages was subsequently deployed successfully in workflow run 43769787082 for commit 37a1f382de4ddbfd92350cb58f01a8ccd713f7bf. The numerical and viewport results below describe the local runs, not tests on physical mobile devices. The site was served from `web/site` on a local HTTP server and opened in the Chromium-based browser pane of the Claude desktop app on the Windows 11 development workstation.
 
 ## What was checked
 
@@ -11,7 +11,7 @@ Recorded November 15, 2026 for the local preview build of the browser edition. N
 | Web settings transformation vs. `app.MainWindow.settings()` over 41 control states (40 randomized) | identical `Settings` |
 | Explore payload vs. direct `simulate` + `fit_das` (native) | bit-identical arrays |
 | Each tour step: desktop tour panel vs. the web replica of `tour.py` vs. the original forward tour sequence; Back, Finish and restoration | identical `Settings` and fit window; previous controls restored |
-| Built engine files (`ftir_sim.py`, model JSON, release config, theory/assumption/reference files) | byte-identical to repository root, SHA-256 recorded and verified by the worker before use |
+| Built engine files (`ftir_sim.py`, model JSON, release config, theory/assumption/reference files) | byte-identical to their shared source files in `desktop/`, SHA-256 recorded and verified by the worker before use |
 | Release audit (`review/audit_release.py`, extended to `web/` and `.github/`) | 494 files, no findings; scientific files identical to v11 |
 | Static build with site-packages disabled (`python -S`) | succeeds; deterministic build ID |
 
@@ -42,7 +42,7 @@ Browser computation time on this workstation: 0.10–0.20 s for most scenarios, 
 - Real devices: iOS Safari and Android Chrome on actual phones and tablets, including first-load time on a mobile connection, peak memory and touch gestures (tap, press-and-hold drag, swipe scrolling). Viewport emulation does not reproduce mobile touch handling or memory limits.
 - Firefox and Safari desktop.
 - Screen-reader walkthrough, 200 % text zoom and a formal colour-contrast audit.
-- A hosted (GitHub Pages) deployment, which requires authorization.
+- Numerical parity and interaction checks on the live hosted deployment; successful workflow deployment is recorded above.
 
 Run `validate.html` on each target device and record the environment text it prints.
 

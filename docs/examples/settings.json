@@ -8,8 +8,8 @@
     "fold_width": 1053.1957284666667,
     "n_opd": 1024,
     "dt_us": 6.0,
-    "heat_tau": 12.159431012655,
-    "rp_tau": 449.142836676229,
+    "heat_tau": 12.159431012654633,
+    "rp_tau": 449.14283667622936,
     "heat_beta": 1.0,
     "rp_beta": 1.0,
     "heat_scale": 1.0,
@@ -23,13 +23,13 @@
     "blocking_od": 0.0,
     "leak_transient_ppm": 0.0,
     "laser": false,
-    "laser_route": "interferometric",
+    "laser_route": "bypass_scatter",
     "laser_nm": 532.0,
     "pulse_fwhm_ns": 6.0,
     "reflection_ns": 20.0,
     "reflection_fraction": 0.3,
     "response_us": 0.15,
-    "laser_area_us": 2e-05,
+    "laser_area_us": 0.002,
     "laser_delay_us": 0.0,
     "laser_scatter": 0.3,
     "laser_blocking_od": 0.0,
@@ -54,7 +54,7 @@
     "chirp_hz_per_ms": 0.0,
     "envelope_slope": 0.0,
     "quadrature_slope": 0.0,
-    "servo_fraction": 0.15,
+    "servo_fraction": 0.0,
     "servo_sharpness": 12.0,
     "phase_mode": "locked",
     "coadds": 10,
@@ -68,7 +68,7 @@
     "tilt_ppm": 200.0,
     "electrical": false,
     "electrical_fraction": 0.0002,
-    "electrical_frequency": 840,
+    "electrical_frequency": 840.0,
     "electrical_phase_deg": 0.0,
     "electrical_pattern": "zpd_local",
     "noise": false,
@@ -82,9 +82,32 @@
   "kinetic_processing": "Nearest native channel, no spectral interpolation",
   "wavenumber_order": "descending",
   "amplitude_units": "OD",
+  "matrix_axis_order": [
+    "time",
+    "wavenumber"
+  ],
+  "matrix_shape": [
+    590,
+    513
+  ],
+  "native_time_us": [
+    -153.0,
+    3381.0
+  ],
+  "native_time_step_us": 6.0,
+  "native_wavenumber_cm1": [
+    2106.3914569333333,
+    1053.1957284666667
+  ],
+  "generator": "tools/generate_examples.py",
+  "environment": {
+    "python": "3.12.10",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
   "scientific_inputs_sha256": {
-    "ftir_sim.py": "3a3b4f51745626ae0994911f86fc57c5b8796e9f62b9ebf635fa32f59ff1e6c8",
-    "synthetic_model.json": "a2d45fd6ea6003220de805bc1f70866c5a17511ad1dae0278a027f2a88f6e30b",
-    "waveform_defaults.json": "9692dc0d0e32fbb25228ddd064551b28b831c5de3de5bd7900857133f05ea14e"
+    "ftir_sim.py": "9e0ca4eecaaadb5ae47b65d103de269d0bb9cd9d4140f5671eace553a4765dfe",
+    "synthetic_model.json": "5e8b992d5596b822c5947332c3bde14bd2869bf15c1f574b6ac7062000c514b9",
+    "waveform_defaults.json": "85c2112ca5dff5ebd6dbd08ff074d05f122f46a1a108829246bba0620294c7fb"
   }
 }

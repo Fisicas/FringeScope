@@ -1,6 +1,8 @@
 # FringeScope — theory and evidence
 
-FringeScope is a forward simulator for time-resolved step-scan FTIR artifacts. It combines an analytic PSI-inspired difference signal with declared instrument disturbances. All displayed spectra and figures are simulated. Numerical consistency, literature precedent and instrument calibration are distinct kinds of evidence.
+FringeScope is a forward simulator for artifacts in time-resolved step-scan FTIR spectroscopy. It adds declared instrument disturbances to a known synthetic flash-induced difference signal modeled on photosystem I (PSI), so their spectral and kinetic signatures can be compared with the artifact-free input. It is a teaching and experiment-planning tool: all displayed spectra and figures are simulated, and the simulator alone cannot show which mechanism affects a particular measurement. Numerical consistency, literature precedent and instrument calibration are distinct kinds of evidence.
+
+**Abbreviations.** ΔA: absorbance change (OD). OPD: optical path difference. ZPD: zero path difference. IFG: interferogram. DAS: decay-associated spectrum. HeNe: helium–neon reference laser.
 
 ## Guided tutorial
 
@@ -56,7 +58,7 @@ I(x,t)=\int S(\tilde{\nu},t)\cos(2\pi\tilde{\nu}x)\,d\tilde{\nu}\tag{5}
 \delta x=2d,\qquad I(x+\delta x,t)\simeq\sum_{m=0}^{4}\frac{(\delta x)^m}{m!}\frac{\partial^m I(x,t)}{\partial x^m}\tag{6}
 ```
 
-OPD x is in cm; mirror displacement d in nm changes OPD by 2d × 10⁻⁷ cm. The production engine uses a fourth-order expansion at the physical optical wavenumber with the odd-zone alias sign retained. Common bias affects both records; return mismatch and per-step jitter are differential errors. Constant ZPD registration error alone is not a temporal 840 Hz source. A step-scan mirror normally holds a position during a flash train, rather than returning to ZPD after every flash.
+OPD x is in cm; mirror displacement d in nm changes OPD by 2d × 10⁻⁷ cm. The production engine uses a fourth-order expansion at the physical optical wavenumber, retaining the alias sign of the [B, 2B] display zone. Common bias affects both records; return mismatch and per-step jitter are differential errors. Constant ZPD registration error alone is not a temporal 840 Hz source. A step-scan mirror normally holds a position during a flash train, rather than returning to ZPD after every flash.
 
 ```math
 \delta I(x,t)\simeq 2d(t)\,\frac{\partial I(x+2b)}{\partial x}\tag{7}
@@ -104,7 +106,7 @@ F_s=\frac{1}{\Delta x}=2B,\qquad \tilde{\nu}\in[B,2B]\tag{11}
 q(\tilde{\nu})=\left|\left[(\tilde{\nu}+B)\;\mathrm{mod}\;2B\right]-B\right|,\qquad \tilde{\nu}_{\mathrm{display}}=2B-q\tag{12}
 ```
 
-Spatial sampling, not nanosecond pulse width, sets the optical alias. For this selected odd-zone grid B ≈ 1053.20 cm⁻¹ and OPD step ≈ 4.75 µm, nominal 532 nm OPD-modulated light maps to about 1945.86 cm⁻¹. Directly sampled fringe checks support the identity; these values are not measured metrology or detector-response calibration. A uniform direct bypass has no optical carrier; an assumed step-dependent bypass has the spectrum of its coupling pattern.
+Spatial sampling, not nanosecond pulse width, sets the optical alias. For this grid, displayed in the zone [B, 2B], B ≈ 1053.20 cm⁻¹ and OPD step ≈ 4.75 µm, nominal 532 nm OPD-modulated light maps to about 1945.86 cm⁻¹. Directly sampled fringe checks support the identity; these values are not measured metrology or detector-response calibration. A uniform direct bypass has no optical carrier; an assumed step-dependent bypass has the spectrum of its coupling pattern.
 
 The optical pulse model is a nominal 6 ns Gaussian plus an assumed 20 ns delay tail, convolved with a first-order detector response and integrated over recorder bins. A 20 ns free-space delay corresponds to about 6 m additional path; short reflections do not automatically justify it. A Gaussian centered at zero places some area before zero, including the bin centered at −3 µs. Electronic recovery is a separate assumed response. Pulse-area settings are detector-equivalent quantities, not calibrated laser fluence.
 
@@ -152,7 +154,7 @@ The full mathematical FFT band is approximately 2106.39–1053.20 cm⁻¹. Makit
 - **Makita (2018), printed p. 29/PDF p. 76:** describes folding precautions, two 2000–1000 cm⁻¹ filters and CaF₂ windows. These are reported apparatus precautions, not measured zero-leakage transfer curves. [Institutional record](https://scholarworks.gsu.edu/phy_astr_diss/106).
 - **Makita and Hastings (2016), pp. 1467–1468:** describes filter placement. [DOI](https://doi.org/10.1016/j.dib.2016.04.031).
 - **Nelson et al. (2026), §6.6–6.8/Figs. 7–9:** supports conditional PSI heating-like features and the need to qualify unresolved slow components. The present two-plain-exponential-plus-offset model is different from that published fit. [DOI](https://doi.org/10.3390/mps9060158).
-- **Manning and Griffiths (1997):** abstract-level support for low-frequency fluctuations/noise; no inaccessible full-text quantitative parameters are used. [DOI](https://doi.org/10.1366/0003702971941755).
+- **Manning and Griffiths (1997):** cited for low-frequency fluctuations and noise sources in step-scan measurements; no quantitative parameters are taken from it. [DOI](https://doi.org/10.1366/0003702971941755).
 
 Absolute amplitudes, thermal fractions, actual detector/filter response and the disturbance mechanism remain assumptions or unmeasured quantities. Synchronized position-error records, raw interferograms, IR/laser-blocked controls and timing/coaddition tests are needed for instrument-specific discrimination. Numerical fits, spectral similarity and inverse-transmission enhancement alone do not identify a cause.
 

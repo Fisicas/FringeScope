@@ -34,7 +34,9 @@ STEPS = [
                      'The 840 Hz drive (period ≈ 1.19 ms) is sampled by 6 µs bins.'),
          ('kinetics', 'Kinetics at 1697 cm⁻¹: the effects-applied trace oscillates about the '
                       'artifact-free decay, by about ±100 µOD on a 600 µOD signal.'),
-         ('spectrum', 'Spectrum at 100 µs: the artifact is as large as the signal and covers the whole band.'),
+         ('spectrum', 'Spectrum at 100 µs: the artifact covers the whole band, including regions with no '
+                      'chemical signal, and grows toward high wavenumber (about 140 µOD at the band edge, '
+                      'against a 460 µOD peak signal).'),
          ('das', 'DAS: the projected DAS now differ from the input. '
                  'A fit would report part of the artifact as kinetics.'),
          ('source:wobble', 'Switch Mirror motion off and on to compare.')]},
@@ -43,7 +45,7 @@ STEPS = [
      'changed': 'Globar leakage is on: continuous leakage at fraction 0.1, blocking OD 0, '
                 'no changing-leak term. Mirror motion is off again.',
      'look': [
-         ('spectrum', 'Spectrum: the same shape, about 8 % smaller. A stable leak dilutes the real difference.'),
+         ('spectrum', 'Spectrum: the same shape, about 6–12 % smaller depending on wavenumber. A stable leak dilutes the real difference.'),
          ('kinetics', 'Kinetics: the decay keeps its timing. A stable leak does not create a transient '
                       'from an unchanged sample.'),
          ('o0', 'Optical contributions, reference intensity: the leak raises the single-beam reference '

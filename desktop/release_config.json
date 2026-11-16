@@ -2,7 +2,7 @@
   "public_mode": true,
   "dataset_policy": "simulated model only; no dataset selector or archival replay",
   "repository_url": "https://github.com/Fisicas/FringeScope",
-  "publication_policy": "Local development only. Do not post or push anything until the complete release is ready and the user explicitly authorizes publication.",
+  "publication_policy": "Public source and deployed browser edition. Tagged software releases and DOI publication are separate actions.",
   "updates_enabled": false,
-  "update_policy": "Installed release copies check at startup and offer a verified installer. Review builds remain offline until publication is authorized."
+  "update_policy": "Automatic and manual network update checks are disabled in version 0.11.0. Install a downloaded release explicitly."
 }

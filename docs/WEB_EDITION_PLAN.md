@@ -1,10 +1,10 @@
-# FringeScope Web: GitHub Pages edition
+# FringeScope Web: deployment and architecture
 
-Status (November 15, 2026): **implemented locally as a preview and validated on the development workstation (see [docs/WEB_VALIDATION.md](WEB_VALIDATION.md)); not deployed.** Nothing has been pushed, Pages is not enabled and no hosted preview exists. The intended project URL `https://Fisicas.github.io/FringeScope/` is not claimed to exist. Zenodo and DOI work stay deferred. The Windows application, its scientific engine and its prepared 0.11.0 binaries are unchanged by this work.
+Status (November 15, 2026): **deployed at [Fisicas.github.io/FringeScope](https://Fisicas.github.io/FringeScope/)**. [Pages workflow run 43769787082](https://github.com/Fisicas/FringeScope/actions/runs/43769787082) succeeded for commit `37a1f382de4ddbfd92350cb58f01a8ccd713f7bf`. Local numerical and interface evidence is recorded in [WEB_VALIDATION.md](WEB_VALIDATION.md). A Pages deployment is distinct from a tagged software release and DOI archival publication.
 
-## Decision
+## Architecture
 
-Yes, a browser edition and the standalone application can coexist in one repository. GitHub Pages serves static files only, so the browser edition computes on the visitor's device:
+The browser edition and standalone application coexist in one repository. GitHub Pages serves static files only, so the browser edition computes on the visitor's device:
 
 - **One scientific kernel.** The browser runs the repository's own `ftir_sim.py` with `synthetic_model.json` and `release_config.json` under Pyodide (CPython compiled to WebAssembly), in a module Web Worker. No formula is re-implemented in JavaScript. The build copies these files byte-for-byte and records their SHA-256 in `site/build_manifest.json`.
 - **Pinned runtime.** Pyodide 314.0.8 (Python 3.14.2, NumPy 2.4.6, SciPy 1.18.0) is loaded from jsDelivr at a fixed version. Desktop validation used NumPy 2.5.3 / SciPy 1.18.1, so numerical identity is not assumed; it is tested (below).
@@ -20,7 +20,7 @@ Yes, a browser edition and the standalone application can coexist in one reposit
 | Demonstrations | The four fixed lessons rendered by `desktop/build_demos.py`, light and dark, labeled **precomputed** | No |
 | Theory | Article generated from `THEORY.md` | No |
 | Tutorial | How the tour works, the four steps with a live link to each (`index.html#tour-N`), and the desktop notes from `TUTORIAL.md` | No |
-| Download / Cite | Desktop downloads (after publication), citation, license, web-runtime notices and privacy | No |
+| Download / Cite | Windows distribution links and availability, citation, license, web-runtime notices and privacy | No |
 
 ## Interaction contract
 
@@ -38,7 +38,7 @@ Yes, a browser edition and the standalone application can coexist in one reposit
 2. Browser parity page (`site/validate.html`) runs declared scenarios in Pyodide (ideal, biased mirror, composite/servo, random and free-running phase, globar steady/transient, interferometric/bypass actinic, electrical, mismatch with jitter, noise, magnitude readout, combinations, and the free lifetime refit), and compares them with native fixtures from `web/tools/make_parity_fixtures.py`.
 3. Layout checks at phone (375 px), tablet (768 px) and desktop widths in both themes. Real iOS Safari / Android Chrome trials remain a user step and are reported as unverified until done.
 
-Results so far: 51/51 tests passed; browser parity 20/20 scenarios (fixed-basis agreement ≈ 10⁻¹⁵ OD; free refits within the stated optimizer tolerance); emulated phone/tablet/desktop layouts, tour restoration and export checked. Real-device trials remain open.
+The initial browser validation recorded 51/51 tests passed; browser parity 20/20 scenarios (fixed-basis agreement ≈ 10⁻¹⁵ OD; free refits within the stated optimizer tolerance); emulated phone/tablet/desktop layouts, tour restoration and export checked. Real-device trials remain open.
 
 ## Source layout
 
@@ -49,9 +49,9 @@ Results so far: 51/51 tests passed; browser parity 20/20 scenarios (fixed-basis 
 - `web/tools/make_parity_fixtures.py`: regenerates native fixtures (needs the pinned scientific environment).
 - `tests/test_web_edition.py`: desktop-equivalence and build-integrity tests.
 
-## Deployment (not performed)
+## Deployment
 
-`.github/workflows/pages.yml` is manual-only (`workflow_dispatch`). It builds `web/site` with the standard library and deploys it. Enabling Pages, pushing or running the workflow needs explicit approval. An offline PWA shell is deferred until after the first release.
+`.github/workflows/pages.yml` is manual-only (`workflow_dispatch`). It builds `web/site` with the standard library and deploys it. The deployed site is rebuilt only when this workflow is run. The web edition requires its external runtime download; no offline PWA is supplied.
 
 ## Primary technical sources consulted
 

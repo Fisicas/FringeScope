@@ -1,7 +1,9 @@
-# Keep text byte-identical across Windows and the Linux Pages runner: the web
-# build verifies engine files by SHA-256.
+# Normalize application text to LF for reproducible source and web builds.
+# Copied upstream notices retain their verified original bytes.
 * text=auto eol=lf
 *.png binary
 *.ico binary
 *.zip binary
 *.exe binary
+
+/desktop/licenses/** -text

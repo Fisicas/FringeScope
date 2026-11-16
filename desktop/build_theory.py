@@ -255,7 +255,7 @@ html[data-theme="light"] th,html[data-theme="light"] button {{background:#e5eeea
 def main():
     root=Path(__file__).resolve().parent
     ensure_assets(root,'light');ensure_assets(root,'dark')
-    (root/'THEORY.html').write_text(build_html(root),encoding='utf-8')
+    (root/'THEORY.html').write_text(build_html(root),encoding='utf-8',newline='\n')
     print(json.dumps({'html':str(root/'THEORY.html'),'equations':len(EQUATIONS)}))
 
 if __name__=='__main__':main()

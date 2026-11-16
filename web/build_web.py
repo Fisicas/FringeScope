@@ -96,7 +96,7 @@ def page(filename, title, description, body, build, scripts='', head=''):
 </header>
 {body}
 <footer class="site-footer"><div class="inner">
-  <span>FringeScope {VERSION} · web preview build <code>{build}</code></span>
+  <span>FringeScope {VERSION} · web build <code>{build}</code></span>
   <span>All displayed spectra are simulated.</span>
   <a href="cite.html#license">MIT license and notices</a>
   <a href="cite.html#privacy">Privacy</a>
@@ -268,7 +268,7 @@ def theory_page(build, assets):
   <caption>FringeScope</caption>
   <tr><td colspan="2"><img src="img/fringescope_256.png" alt="FringeScope magnifying-lens logo" width="92" height="92"></td></tr>
   <tr><th scope="row">Type</th><td>Forward simulator of time-resolved step-scan FTIR artifacts</td></tr>
-  <tr><th scope="row">Signal</th><td>Synthetic PSI-inspired ΔA: two bin-averaged exponentials plus a causal residual</td></tr>
+  <tr><th scope="row">Signal</th><td>Synthetic photosystem I (PSI)-inspired ΔA: two bin-averaged exponentials plus a causal residual</td></tr>
   <tr><th scope="row">Spectral grid</th><td>513 channels, ≈ 2106.39–1053.20 cm⁻¹, descending</td></tr>
   <tr><th scope="row">Time grid</th><td>590 bins of 6 µs, −153 to 3381 µs</td></tr>
   <tr><th scope="row">Artifacts</th><td>Mirror motion, globar leakage, 532 nm actinic pickup, electrical pickup, return mismatch</td></tr>
@@ -359,12 +359,13 @@ def cite_page(build):
 <h2 id="desktop">Desktop application<a class="anchor" href="#desktop" aria-label="Link to this section">#</a></h2>
 <p>The Windows application is the reference edition. It runs offline and includes the same engine, the demonstrations with numerical export, and the offline theory reader.</p>
 <div class="card-grid">
-  <div class="card"><h3>Windows installer</h3><p>Per-user installer, no administrator rights required. Version {VERSION}.</p><p><a class="btn primary" href="{REPO}/releases">GitHub Releases</a></p><p class="note">Release assets appear here after publication. The installer is currently unsigned.</p></div>
+  <div class="card"><h3>Windows installer</h3><p>Per-user installer, no administrator rights required. Version {VERSION}.</p><p><a class="btn primary" href="{REPO}/releases">GitHub Releases</a></p><p class="note">Check GitHub Releases for published files and checksums. The installer is unsigned.</p></div>
   <div class="card"><h3>Portable ZIP</h3><p>Standalone folder: keep <code>FringeScope.exe</code> beside its <code>_internal</code> folder.</p><p><a class="btn" href="{REPO}/releases">GitHub Releases</a></p></div>
   <div class="card"><h3>Source</h3><p>Python 3.12 with pinned NumPy, SciPy, Matplotlib and PySide6. Includes tests and figure generators.</p><p><a class="btn" href="{REPO}">Repository</a></p></div>
 </div>
 <h2 id="cite">Cite FringeScope<a class="anchor" href="#cite" aria-label="Link to this section">#</a></h2>
 <p>Cite the version you used, and cite the primary spectroscopy papers for scientific claims. No software DOI has been assigned yet.</p>
+<p>Author: Michael Raymond Nelson, ORCID <a href="https://orcid.org/0009-0004-9809-9842">0009-0004-9809-9842</a>.</p>
 <pre class="cite">Nelson, M. R. FringeScope: Time-resolved step-scan FTIR artifact simulator (version {VERSION}) [Computer software]. {REPO}</pre>
 <pre class="cite">{html.escape(bibtex)}</pre>
 <p>Machine-readable metadata: <code>CITATION.cff</code> in the repository.</p>
@@ -447,7 +448,7 @@ def main():
         '<main id="main" class="page"><article class="prose"><h1>Page not found</h1><p><a href="index.html">Open FringeScope</a></p></article></main>', build), encoding='utf-8')
     files = {p.relative_to(SITE).as_posix(): {'bytes': p.stat().st_size, 'sha256': sha(p.read_bytes())}
              for p in sorted(SITE.rglob('*')) if p.is_file()}
-    manifest = dict(application='FringeScope Web (preview)', version=VERSION, build=build, pyodide=PYODIDE,
+    manifest = dict(application='FringeScope Web', version=VERSION, build=build, pyodide=PYODIDE,
                     note='Engine files under py/ are byte-identical copies of the desktop/ source files listed in kernel_sources.',
                     kernel_sources={k: v for k, v in kernel.items()}, files=files)
     (SITE/'build_manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
