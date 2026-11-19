@@ -9,6 +9,6 @@ web builder copies the scientific engine and its required model files from
 here without modifying them. The Windows freezer retains the same resource
 relationships inside the collected runtime. Guides are in `../docs/`.
 
-See [the main README](../README.md), [theory](THEORY.md),
+See [the main README](../README.md), [theory](THEORY_GITHUB.md), [LaTeX source](THEORY.md),
 [model assumptions](MODEL_ASSUMPTIONS.md), [tutorial](TUTORIAL.md),
 [references](REFERENCES.bib) and [third-party notices](THIRD_PARTY_NOTICES.md).

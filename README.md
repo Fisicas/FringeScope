@@ -6,7 +6,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24266818.svg)](https://doi.org/10.5281/zenodo.24266818)
 
-[Open the browser app](https://Fisicas.github.io/FringeScope/) · [Theory and evidence](desktop/THEORY.md) · [Documentation](docs/README.md) · [Install on Windows](docs/INSTALLATION.md)
+[Open the browser app](https://Fisicas.github.io/FringeScope/) · [Theory and evidence](desktop/THEORY_GITHUB.md) · [Documentation](docs/README.md) · [Install on Windows](docs/INSTALLATION.md)
 
 Explore how mirror motion, continuous out-of-band globar leakage and pulsed 532 nm actinic pickup change a synthetic flash-induced difference spectrum modeled on photosystem I (PSI). Linked contour, spectrum, kinetic and decay-associated spectrum (DAS) views let you compare the ideal signal with selected artifacts. All displayed signals are simulated.
 
@@ -61,7 +61,7 @@ The PSI-inspired difference signal has two bin-averaged exponential components a
 
 Mirror motion changes OPD by twice the mirror displacement. The main engine uses a fourth-order displacement expansion with documented limits. Continuous leakage enters both reference and signal: it can dilute a genuine difference but does not create a flash transient in an unchanged stationary linear system. Optical-wavelength folding requires OPD-dependent coupling. Uniform bypass light has no optical fringe carrier. Electrical pickup, harmonics and return mismatch are optional sensitivity models. An illustrative 840 Hz oscillation, including its equality to 14 × 60 Hz, does not identify an experimental mechanism.
 
-Read [theory and evidence](desktop/THEORY.md), the offline `THEORY.html` reading copy, [model assumptions](desktop/MODEL_ASSUMPTIONS.md) and [primary references](desktop/REFERENCES.bib). No smoothing, baseline subtraction or amplitude normalization is silently applied to the simulated ΔA. Nonpositive intensity reconstructions remain masked. Figures and text distinguish simulation, numerical checks, literature evidence and unverified apparatus assumptions.
+Read [theory and evidence](desktop/THEORY_GITHUB.md), the offline `THEORY.html` reading copy, [model assumptions](desktop/MODEL_ASSUMPTIONS.md) and [primary references](desktop/REFERENCES.bib). No smoothing, baseline subtraction or amplitude normalization is silently applied to the simulated ΔA. Nonpositive intensity reconstructions remain masked. Figures and text distinguish simulation, numerical checks, literature evidence and unverified apparatus assumptions.
 
 ## Reproduce and test
 
@@ -75,6 +75,8 @@ Read [theory and evidence](desktop/THEORY.md), the offline `THEORY.html` reading
 ```
 
 Figure generators preserve numerical provenance. `desktop/build_convergence.py` re-renders bundled audit metrics; it does not independently rerun that audit. See [validation](docs/VALIDATION.md) and [Windows build instructions](docs/BUILDING_WINDOWS.md).
+
+`desktop/build_theory.py` also regenerates `desktop/THEORY_GITHUB.md` from the canonical `desktop/THEORY.md`. The GitHub reading copy uses the bundled light/dark equation images; edit the canonical source and regenerate both reading copies together.
 
 ## Citation, license and development
 

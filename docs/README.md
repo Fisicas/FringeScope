@@ -2,7 +2,7 @@
 
 - [Installation and troubleshooting](INSTALLATION.md)
 - [Guided tutorial](../desktop/TUTORIAL.md)
-- [Theory and evidence](../desktop/THEORY.md) and [offline reading copy](../desktop/THEORY.html)
+- [Theory and evidence](../desktop/THEORY_GITHUB.md), [LaTeX source](../desktop/THEORY.md) and [offline reading copy](../desktop/THEORY.html)
 - [Model assumptions and provenance](../desktop/MODEL_ASSUMPTIONS.md)
 - [Primary references](../desktop/REFERENCES.bib)
 - [Validation and limitations](VALIDATION.md), [browser validation](WEB_VALIDATION.md) and [recorded checks](VALIDATION_RESULTS.json)
